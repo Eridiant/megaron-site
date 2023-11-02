@@ -8,7 +8,7 @@
         <p class="title">Получите консультацию</p>
         <p class="form-desc">Оставьте заявку на сайте и получите бесплатную консультацию + презентацию</p>
 
-        <form id="form" class="form-form" action="#" method="post">
+        <form id="form" class="form-form" action="/api/message" method="post">
             <div class="form-inner">
                 <div class="form-inner-container">
                     <label class="form-label" for="phone">ваш телефон:</label>
