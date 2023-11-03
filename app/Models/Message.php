@@ -22,6 +22,7 @@ class Message extends Model
      * @var array
      */
     protected $fillable = [
+        'form',
         'name',
         'phone',
         'communicate',

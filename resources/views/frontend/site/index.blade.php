@@ -4,6 +4,7 @@
 @section('description', "\$category->description")
 
 @section('content')
+    @include('frontend.site.index.first')
     @include('frontend.site.index._estate')
     @include('frontend.site.index._panorama')
     @include('frontend.site.index._recommend')
