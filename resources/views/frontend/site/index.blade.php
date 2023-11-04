@@ -16,6 +16,7 @@
     @include('frontend.common.bidding')
     @include('frontend.common.growth')
     @include('frontend.common.investment')
+    @include('frontend.common.auction')
     @include('frontend.common.experts')
     @include('frontend.common.form')
 @stop

@@ -9,7 +9,7 @@
     @include('frontend.common.investment')
     @include('frontend.auction.auction.description')
     @include('frontend.auction.auction.apartment')
-    @include('frontend.auction.auction.auction')
+    @include('frontend.common.auction')
 
     @include('frontend.common.form')
 @stop
