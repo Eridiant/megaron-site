@@ -12,6 +12,10 @@
     @include('frontend.site.index._district')
     @include('frontend.site.index._offer')
     <!-- @include('frontend.site.index._map') -->
+
+    @include('frontend.common.bidding')
+    @include('frontend.common.growth')
+    @include('frontend.common.investment')
     @include('frontend.common.experts')
     @include('frontend.common.form')
 @stop
