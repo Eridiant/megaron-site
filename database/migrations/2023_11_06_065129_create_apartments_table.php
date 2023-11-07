@@ -11,16 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('apartment', function (Blueprint $table) {
+        Schema::create('apartments', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('complex_id');
             $table->integer('number_of_rooms');
             $table->decimal('cost', 15, 2);
             $table->decimal('area', 10, 2);
-            $table->string('status', 50)->default('available'); // e.g., available, sold, reserved
-            $table->timestamps();
+            $table->string('status', 50)->default('available');
 
-            $table->foreign('complex_id')->references('id')->on('complex')->onDelete('cascade');
+            $table->foreign('complex_id')->references('id')->on('complexes')->onDelete('cascade');
+
+            $table->index('complex_id');
         });
     }
 
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('apartment');
+        Schema::dropIfExists('apartments');
     }
 };

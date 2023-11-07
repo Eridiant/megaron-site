@@ -14,7 +14,7 @@ class Message extends Model
      *
      * @var string
      */
-    protected $table = 'message'; // Specify the table name if it's not the plural form of the model name.
+    protected $table = 'messages'; // Specify the table name if it's not the plural form of the model name.
 
     /**
      * The attributes that are mass assignable.
@@ -23,6 +23,8 @@ class Message extends Model
      */
     protected $fillable = [
         'form',
+        'lang',
+        'country',
         'name',
         'phone',
         'communicate',
@@ -30,5 +32,6 @@ class Message extends Model
         'message',
         'ip',
         'spam',
+        'status',
     ];
 }

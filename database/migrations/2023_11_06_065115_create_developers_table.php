@@ -11,14 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('complex', function (Blueprint $table) {
+        Schema::create('developers', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('neighborhood_id');
-            $table->string('name', 150);
+            $table->string('name', 255);
             $table->text('description')->nullable();
-            $table->timestamps();
-
-            $table->foreign('neighborhood_id')->references('id')->on('neighborhood')->onDelete('cascade');
         });
     }
 
@@ -27,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('complex');
+        Schema::dropIfExists('developers');
     }
 };

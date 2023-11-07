@@ -11,13 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('neighborhood', function (Blueprint $table) {
+        Schema::create('countries', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('city_id');
-            $table->string('name', 100);
-            $table->timestamps();
-
-            $table->foreign('city_id')->references('id')->on('city')->onDelete('cascade');
+            $table->string('name', 255);
         });
     }
 
@@ -26,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('neighborhood');
+        Schema::dropIfExists('countries');
     }
 };
