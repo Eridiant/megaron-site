@@ -7,6 +7,7 @@ use App\Http\Controllers\ApartmentsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuctionController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\Admin\AdminController;
 
 /*
 |--------------------------------------------------------------------------

@@ -13,11 +13,13 @@ return new class extends Migration
     {
         Schema::create('apartments', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('complex_id');
+            $table->foreignId('complex_id');
             $table->integer('number_of_rooms');
             $table->decimal('cost', 15, 2);
-            $table->decimal('area', 10, 2);
-            $table->string('status', 50)->default('available');
+            $table->decimal('total_area', 10, 2);
+            $table->decimal('living_area', 10, 2);
+            $table->json('media');
+            $table->tinyInteger('status')->default(1);
 
             $table->foreign('complex_id')->references('id')->on('complexes')->onDelete('cascade');
 

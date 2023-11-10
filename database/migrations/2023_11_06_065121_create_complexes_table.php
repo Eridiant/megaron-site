@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('complexes', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('neighborhood_id');
-            $table->unsignedBigInteger('developer_id');
-            $table->string('name', 255);
+            $table->foreignId('neighborhood_id');
+            $table->foreignId('developer_id');
+            $table->json('media');
             $table->string('location', 255)->nullable();
 
             $table->foreign('neighborhood_id')->references('id')->on('neighborhoods')->onDelete('cascade');

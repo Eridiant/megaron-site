@@ -29,8 +29,15 @@ class MessageController extends Controller
             $communicate[] = 'telegram';
 
         $suspicion = 0;
-        if (!isset($_SERVER['HTTP_ACCEPT_LANGUAGE']))
+        $langs = app()->getLocale();
+        if (!isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
             $suspicion += 2;
+        } else {
+            // $langsArray = explode(",", $_SERVER['HTTP_ACCEPT_LANGUAGE']);
+            $langsArray = explode(",", 'en-us,en;q=0.9');
+            $langs .= "," .(empty($langsArray[1]) ? '' : substr($langsArray[1], 0, 2)) . "," . (empty($langsArray[2]) ? '' : substr($langsArray[2], 0, 2));
+            // $langs .= "," . substr($langsArray[1], 0, 2) . "," . substr($langsArray[2], 0, 2);
+        }
         if (!isset($_SERVER['GEOIP_COUNTRY_CODE']))
             $suspicion++;
         if (!isset($_SERVER['GEOIP_CITY']))
@@ -45,6 +52,8 @@ class MessageController extends Controller
         $message = Message::create([
             'phone' => $validatedData['phone'],
             'communicate' => $communicateString,
+            'lang' => $langs,
+            'country' => $_SERVER['GEOIP_COUNTRY_CODE'] ?? '',
             'ip' => inet_pton($request->ip()),
             'spam' => $suspicion,
         ]);

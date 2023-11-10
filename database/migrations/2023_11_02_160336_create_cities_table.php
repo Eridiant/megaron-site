@@ -13,10 +13,11 @@ return new class extends Migration
     {
         Schema::create('cities', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('country_id');
+            $table->foreignId('country_id');
             $table->string('name', 255);
             $table->text('description')->nullable();
             $table->string('location', 255);
+            $table->json('media');
 
             $table->foreign('country_id')->references('id')->on('countries')->onDelete('cascade');
 
