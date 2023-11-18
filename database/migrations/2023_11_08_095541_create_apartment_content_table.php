@@ -13,10 +13,14 @@ return new class extends Migration
     {
         Schema::create('apartment_content', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
-            $table->string('lang', 20);
-            $table->string('name', 255);
+            $table->foreignId('apartment_id');
+            $table->string('lang', 20)->nullable();
+            $table->string('name', 255)->nullable();
             $table->text('description')->nullable();
+
+            $table->foreign('apartment_id')->references('id')->on('apartments')->onDelete('cascade');
+
+            $table->index('apartment_id');
         });
     }
 

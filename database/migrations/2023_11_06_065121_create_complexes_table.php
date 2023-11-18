@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('neighborhood_id');
             $table->foreignId('developer_id');
-            $table->json('media');
+            $table->json('media')->nullable();
             $table->string('location', 255)->nullable();
 
             $table->foreign('neighborhood_id')->references('id')->on('neighborhoods')->onDelete('cascade');

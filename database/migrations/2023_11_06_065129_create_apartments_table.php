@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('apartments', function (Blueprint $table) {
             $table->id();
             $table->foreignId('complex_id');
-            $table->integer('number_of_rooms');
-            $table->decimal('cost', 15, 2);
-            $table->decimal('total_area', 10, 2);
-            $table->decimal('living_area', 10, 2);
-            $table->json('media');
+            $table->integer('number_of_rooms')->nullable();
+            $table->decimal('cost', 15, 2)->nullable();
+            $table->decimal('total_area', 10, 2)->nullable();
+            $table->decimal('living_area', 10, 2)->nullable();
+            $table->json('media')->nullable();
             $table->tinyInteger('status')->default(1);
 
             $table->foreign('complex_id')->references('id')->on('complexes')->onDelete('cascade');

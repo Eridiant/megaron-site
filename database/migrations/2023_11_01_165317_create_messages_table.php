@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('message')->nullable();
             $table->binary('ip')->nullable();
             $table->tinyInteger('spam')->nullable();
-            $table->tinyText('status')->nullable();
+            $table->json('status')->nullable();
             $table->timestamps();
         });
     }

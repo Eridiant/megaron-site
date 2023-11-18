@@ -14,9 +14,13 @@ return new class extends Migration
         Schema::create('complex_content', function (Blueprint $table) {
             $table->id();
             $table->foreignId('complex_id');
-            $table->string('lang', 20);
-            $table->string('name', 255);
+            $table->string('lang', 20)->nullable();
+            $table->string('name', 255)->nullable();
             $table->text('description')->nullable();
+
+            $table->foreign('complex_id')->references('id')->on('complexes')->onDelete('cascade');
+
+            $table->index('complex_id');
         });
     }
 

@@ -16,8 +16,8 @@ return new class extends Migration
             $table->foreignId('country_id');
             $table->string('name', 255);
             $table->text('description')->nullable();
-            $table->string('location', 255);
-            $table->json('media');
+            $table->string('location', 255)->nullable();
+            $table->json('media')->nullable();
 
             $table->foreign('country_id')->references('id')->on('countries')->onDelete('cascade');
 
