@@ -67,6 +67,11 @@ class Complex extends Model
         return $this->belongsTo(Neighborhood::class);
     }
 
+    public function developer()
+    {
+        return $this->belongsTo(Developer::class);
+    }
+
     /**
      * Get or create the content for the current language.
      */

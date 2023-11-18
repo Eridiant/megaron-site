@@ -29,8 +29,8 @@ class ComplexController extends AdminController
         $grid = new Grid(new Complex);
 
         $grid->column('id', __('ID'))->sortable();
-        $grid->column('neighborhood_id', __('neighborhood_id'));
-        $grid->column('developer_id', __('developer_id'));
+        $grid->column('neighborhood.name', __('neighborhood'));
+        $grid->column('developer.name', __('developer'));
         $grid->column('media', __('media'));
         $grid->column('location', __('location'));
 
@@ -48,8 +48,8 @@ class ComplexController extends AdminController
         $show = new Show(Complex::findOrFail($id));
 
         $show->field('id', __('ID'));
-        $show->field('neighborhood_id', __('neighborhood_id'));
-        $show->field('developer_id', __('developer_id'));
+        $show->field('neighborhood.name', __('neighborhood'));
+        $show->field('developer.name', __('developer'));
         $show->field('media', __('media'));
         $show->field('location', __('location'));
 
