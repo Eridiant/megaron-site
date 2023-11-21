@@ -14,8 +14,7 @@ return new class extends Migration
         Schema::create('cities', function (Blueprint $table) {
             $table->id();
             $table->foreignId('country_id');
-            $table->string('name', 255);
-            $table->text('description')->nullable();
+            $table->string('slug', 255);
             $table->string('location', 255)->nullable();
             $table->json('media')->nullable();
 

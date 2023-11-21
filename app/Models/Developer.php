@@ -26,6 +26,7 @@ class Developer extends Model
      */
     protected $fillable = [
         'id',
+        'slug',
         'name',
         'date_of_creation',
         'completed_objects',

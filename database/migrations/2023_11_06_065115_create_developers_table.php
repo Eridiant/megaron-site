@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('developers', function (Blueprint $table) {
             $table->id();
+            $table->string('slug', 255);
             $table->string('name', 255);
             $table->string('date_of_creation', 255)->nullable();
             $table->smallInteger('completed_objects')->nullable();

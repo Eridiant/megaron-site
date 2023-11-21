@@ -28,9 +28,8 @@ class NeighborhoodController extends AdminController
         $grid = new Grid(new Neighborhood());
 
         $grid->column('id', __('Id'));
-        $grid->column('city.name', __('City'));
-        $grid->column('name', __('Name'));
-        $grid->column('description', __('Description'));
+        $grid->column('city.slug', __('City'));
+        $grid->column('slug', __('slug'));
         $grid->column('location', __('Location'));
         $grid->column('polygon', __('Polygon'));
         $grid->column('media', __('Media'));
@@ -49,9 +48,8 @@ class NeighborhoodController extends AdminController
         $show = new Show(Neighborhood::findOrFail($id));
 
         $show->field('id', __('Id'));
-        $show->field('city.name', __('City'));
-        $show->field('name', __('Name'));
-        $show->field('description', __('Description'));
+        $show->field('city.tentative_name.value', __('City'));
+        $show->field('slug', __('slug'));
         $show->field('location', __('Location'));
         $show->field('polygon', __('Polygon'));
         $show->field('media', __('Media'));
@@ -68,10 +66,17 @@ class NeighborhoodController extends AdminController
     {
         $form = new Form(new Neighborhood());
 
+        $currentLanguage = app()->getLocale();
+
         $form->select('city_id', __('City'))
-            ->options(City::all()->pluck('name','id'));
-        $form->text('name', __('Name'));
-        $form->textarea('description', __('Description'));
+            ->options(City::all()->pluck('slug','id'));
+        $form->text('slug', __('slug'));
+        $form->hidden('trname.locale')->value($currentLanguage);
+        $form->hidden('trname.column_name')->value('name');
+        $form->text('trname.value', __('Name'));
+        $form->hidden('trdescription.locale')->value($currentLanguage);
+        $form->hidden('trdescription.column_name')->value('description');
+        $form->textarea('trdescription.value', __('Description'));
         $form->text('location', __('Location'));
         $form->textarea('polygon', __('Polygon'));
         $form->text('media', __('Media'));

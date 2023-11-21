@@ -26,6 +26,7 @@ class Apartment extends Model
      */
     protected $fillable = [
         'id',
+        'slug',
         'complex_id',
         'number_of_rooms',
         'cost',

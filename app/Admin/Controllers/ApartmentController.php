@@ -74,8 +74,9 @@ class ApartmentController extends AdminController
 
         // $form->display('id', __('ID'));
         // $form->select('complex_id', __('Complex'))->options(Complex::all()->pluck('name', 'id'));
+        $form->text('slug', __('slug'));
         $form->select('complex_id', __('Complex'))
-            ->options(Complex::all()->pluck('content.name','id'));
+            ->options(Complex::all()->pluck('slug','id'));
         $form->text('number_of_rooms', __('number_of_rooms'));
         $form->currency('cost', __('cost'));
         $form->text('total_area', __('total_area'));

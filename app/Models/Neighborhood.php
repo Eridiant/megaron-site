@@ -27,8 +27,7 @@ class Neighborhood extends Model
     protected $fillable = [
         'id',
         'city_id',
-        'name',
-        'description',
+        'slug',
         'location',
         'polygon',
         'media',

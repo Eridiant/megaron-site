@@ -13,16 +13,20 @@ return new class extends Migration
     {
         Schema::create('complexes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('neighborhood_id');
+            $table->string('slug', 255);
+            $table->foreignId('city_id');
             $table->foreignId('developer_id');
+            $table->foreignId('neighborhood_id')->nullable();
             $table->json('media')->nullable();
             $table->string('location', 255)->nullable();
 
             $table->foreign('neighborhood_id')->references('id')->on('neighborhoods')->onDelete('cascade');
             $table->foreign('developer_id')->references('id')->on('developers')->onDelete('cascade');
+            $table->foreign('city_id')->references('id')->on('cities')->onDelete('cascade');
 
             $table->index('neighborhood_id');
             $table->index('developer_id');
+            $table->index('city_id');
         });
     }
 

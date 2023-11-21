@@ -26,6 +26,8 @@ class Complex extends Model
      */
     protected $fillable = [
         'id',
+        'slug',
+        'city_id',
         'neighborhood_id',
         'developer_id',
         'media' => 'json',
@@ -60,6 +62,11 @@ class Complex extends Model
     public function content()
     {
         return $this->hasOne(ComplexContent::class)->where('lang', app()->getLocale());
+    }
+
+    public function city()
+    {
+        return $this->belongsTo(City::class);
     }
 
     public function neighborhood()

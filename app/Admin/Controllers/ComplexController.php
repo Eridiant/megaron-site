@@ -3,6 +3,7 @@
 namespace App\Admin\Controllers;
 
 use Encore\Admin\Controllers\AdminController;
+use App\Models\City;
 use App\Models\Complex;
 use App\Models\Developer;
 use App\Models\Neighborhood;
@@ -67,11 +68,13 @@ class ComplexController extends AdminController
 
         $currentLanguage = app()->getLocale();
 
-        // $form->display('id', __('ID'));
+        $form->text('slug', __('slug'));
+        $form->select('city_id', __('City'))
+            ->options(City::all()->pluck('slug','id'));
         $form->select('neighborhood_id', __('neighborhood_id'))
-            ->options(Neighborhood::all()->pluck('name','id'));
+            ->options(Neighborhood::all()->pluck('slug','id'));
         $form->select('developer_id', __('developer_id'))
-            ->options(Developer::all()->pluck('name','id'));
+            ->options(Developer::all()->pluck('slug','id'));
         // $form->keyValue('media')->rules('required|min:2');
         $form->text('media', __('media'));
         $form->textarea('location', __('location'));

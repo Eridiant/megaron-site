@@ -68,6 +68,7 @@ class DeveloperController extends AdminController
         $form = new Form(new Developer());
 
         $form->text('name', __('Name'));
+        $form->text('slug', __('slug'));
         $form->text('date_of_creation', __('Date of creation'));
         $form->number('completed_objects', __('Completed objects'));
         $form->number('total_objects', __('Total objects'));
