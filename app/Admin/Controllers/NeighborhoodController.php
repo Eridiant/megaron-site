@@ -70,6 +70,7 @@ class NeighborhoodController extends AdminController
 
         $form->select('city_id', __('City'))
             ->options(City::all()->pluck('slug','id'));
+            // ->options(City::all()->pluck('trname.value','id'));
         $form->text('slug', __('slug'));
         $form->hidden('trname.locale')->value($currentLanguage);
         $form->hidden('trname.column_name')->value('name');

@@ -69,7 +69,31 @@ class CityController extends AdminController
 
         $currentLanguage = app()->getLocale();
 
-        $form->select('country_id', __('neighborhood_id'))
+        // $form->saving(function (Form $form) {
+
+        //     var_dump($form->trdescription['column_name'] = 'asdf');
+        //     die;
+        //     $currentLanguage = app()->getLocale();
+        //     // $form['trname']['locale'] = $currentLanguage;
+        //     // $form->trname['column_name'] = 'description';
+
+        //     $form->model()->trname->locale = $currentLanguage;
+        //     $form->model()->trname->column_name = 'description';
+
+        //     // Fetch or create the trdescription relationship
+        //     $trdescription = $form->model()->trdescription;
+        //     $trdescription->locale = $currentLanguage;
+        //     $trdescription->column_name = 'description';
+
+        //     // Assign the value from the form
+        //     $trdescription->value = $form->trdescription['value'];
+
+        //     // Associate the translation with the city
+        //     $form->model()->trdescription()->associate($trdescription);
+        
+        // });        
+
+        $form->select('country_id', __('country_id'))
             ->options(Country::all()->pluck('name','id'));
         $form->text('slug', __('Slug'));
         $form->hidden('trname.locale')->value($currentLanguage);
@@ -79,7 +103,38 @@ class CityController extends AdminController
         $form->hidden('trdescription.column_name')->value('description');
         $form->textarea('trdescription.value', __('Description'));
         $form->text('location', __('Location'));
-        $form->text('media', __('Media'));
+        // $form->text('media', __('Media'));
+
+        $form->multipleImage('media', __('Images'))
+            ->removable()
+            // ->sortable()
+            ->disk('admin')
+            ->rules('image');
+        // $form->multipleImage('media', __('Images'))->disk('public')->removable()->rules('image');
+
+        // $form->multipleImage('media', __('Images'))
+        //     ->disk('public') // specify the disk to store images
+        //     ->removable();
+
+        // $form->saving(function (Form $form) {
+        //     var_dump($form->media);
+        //     die;
+            
+        //     if ($form->images) {
+        //         $form->images = json_encode($form->images);
+        //     }
+        // });
+
+        // Handle the edit form
+        // $form->editing(function (Form $form) {
+        //     var_dump(json_decode($form->model()->media));
+        //     die;
+            
+        //     if (is_string($form->model()->media)) {
+        //         // Decode the JSON string back into an array
+        //         $form->model()->media = json_decode($form->model()->media, true);
+        //     }
+        // });
 
         return $form;
     }

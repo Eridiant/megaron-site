@@ -33,6 +33,27 @@ class City extends Model
         'media',
     ];
 
+    // Mutator to automatically encode the images to JSON before saving to the database
+    public function setMediaAttribute($value)
+    {
+        if (is_array($value)) {
+            // $adjustedPaths = array_map(function ($path) {
+            //     return 'app/images/' . basename($path);
+            // }, $value);
+
+            // $this->attributes['media'] = json_encode($adjustedPaths);
+        } elseif (is_object($value)) {
+            // Convert objects to arrays
+            $value = (array) $value;
+        }
+        $this->attributes['media'] = json_encode($value);
+    }
+
+    public function getMediaAttribute($value)
+    {
+        return json_decode($value, true);
+    }
+
     public function country()
     {
         return $this->belongsTo(Country::class);
