@@ -28,7 +28,7 @@ class ApartmentController extends AdminController
         $grid = new Grid(new Apartment);
 
         $grid->column('id', __('ID'))->sortable();
-        $grid->column('complex.id', __('complex_id'));
+        $grid->column('complex.slug', __('complex'));
         $grid->column('number_of_rooms', __('number_of_rooms'));
         $grid->column('cost', __('cost'));
         $grid->column('total_area', __('total_area'));
@@ -81,12 +81,18 @@ class ApartmentController extends AdminController
         $form->currency('cost', __('cost'));
         $form->text('total_area', __('total_area'));
         $form->text('living_area', __('living_area'));
-        $form->text('media', __('media'));
         $form->text('status', __('status'));
 
         $form->hidden('content.lang')->value($currentLanguage);
         $form->text('content.name', __('name-' . $currentLanguage));
         $form->textarea('content.description', __('description-' . $currentLanguage));
+
+        $form->multipleImage('media', __('Images'))
+            ->removable()
+            // ->sortable()
+            ->disk('admin')
+            ->move('images/apartment')
+            ->rules('image');
 
         return $form;
     }

@@ -109,6 +109,7 @@ class CityController extends AdminController
             ->removable()
             // ->sortable()
             ->disk('admin')
+            ->move('images/city')
             ->rules('image');
         // $form->multipleImage('media', __('Images'))->disk('public')->removable()->rules('image');
 

@@ -96,6 +96,23 @@ class Complex extends Model
         return $content;
     }
 
+    // Mutator to automatically encode the images to JSON before saving to the database
+    public function setMediaAttribute($value)
+    {
+        if (is_array($value)) {
+            $value = array_values($value);
+        } elseif (is_object($value)) {
+            // Convert objects to arrays
+            $value = (array) $value;
+        }
+        $this->attributes['media'] = json_encode($value);
+    }
+
+    public function getMediaAttribute($value)
+    {
+        return json_decode($value, true);
+    }
+
     // public function getContentByLanguage($languageKey)
     // {
     //     return $this->contents()->where('lang', $languageKey)->first();

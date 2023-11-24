@@ -48,7 +48,7 @@ class NeighborhoodController extends AdminController
         $show = new Show(Neighborhood::findOrFail($id));
 
         $show->field('id', __('Id'));
-        $show->field('city.tentative_name.value', __('City'));
+        $show->field('trname.value', __('City'));
         $show->field('slug', __('slug'));
         $show->field('location', __('Location'));
         $show->field('polygon', __('Polygon'));
@@ -80,7 +80,13 @@ class NeighborhoodController extends AdminController
         $form->textarea('trdescription.value', __('Description'));
         $form->text('location', __('Location'));
         $form->textarea('polygon', __('Polygon'));
-        $form->text('media', __('Media'));
+
+        $form->multipleImage('media', __('Images'))
+            ->removable()
+            // ->sortable()
+            ->disk('admin')
+            ->move('images/neighborhood')
+            ->rules('image');
 
         return $form;
     }

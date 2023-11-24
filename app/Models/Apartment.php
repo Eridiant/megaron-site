@@ -36,6 +36,23 @@ class Apartment extends Model
         'status',
     ];
 
+    // Mutator to automatically encode the images to JSON before saving to the database
+    public function setMediaAttribute($value)
+    {
+        if (is_array($value)) {
+            $value = array_values($value);
+        } elseif (is_object($value)) {
+            // Convert objects to arrays
+            $value = (array) $value;
+        }
+        $this->attributes['media'] = json_encode($value);
+    }
+
+    public function getMediaAttribute($value)
+    {
+        return json_decode($value, true);
+    }
+
     public function complex()
     {
         return $this->belongsTo(Complex::class);

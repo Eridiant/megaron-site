@@ -30,8 +30,9 @@ class ComplexController extends AdminController
         $grid = new Grid(new Complex);
 
         $grid->column('id', __('ID'))->sortable();
-        $grid->column('neighborhood.name', __('neighborhood'));
-        $grid->column('developer.name', __('developer'));
+        $grid->column('city.slug', __('city'));
+        $grid->column('neighborhood.slug', __('neighborhood'));
+        $grid->column('developer.slug', __('developer'));
         $grid->column('media', __('media'));
         $grid->column('location', __('location'));
 
@@ -49,7 +50,7 @@ class ComplexController extends AdminController
         $show = new Show(Complex::findOrFail($id));
 
         $show->field('id', __('ID'));
-        $show->field('neighborhood.name', __('neighborhood'));
+        $show->field('neighborhood.slug', __('neighborhood'));
         $show->field('developer.name', __('developer'));
         $show->field('media', __('media'));
         $show->field('location', __('location'));
@@ -75,13 +76,18 @@ class ComplexController extends AdminController
             ->options(Neighborhood::all()->pluck('slug','id'));
         $form->select('developer_id', __('developer_id'))
             ->options(Developer::all()->pluck('slug','id'));
-        // $form->keyValue('media')->rules('required|min:2');
-        $form->text('media', __('media'));
         $form->textarea('location', __('location'));
 
         $form->hidden('content.lang')->value($currentLanguage);
         $form->text('content.name', __('name-' . $currentLanguage));
         $form->textarea('content.description', __('description-' . $currentLanguage));
+
+        $form->multipleImage('media', __('Images'))
+            ->removable()
+            // ->sortable()
+            ->disk('admin')
+            ->move('images/complex')
+            ->rules('image');
 
         return $form;
     }

@@ -37,11 +37,7 @@ class City extends Model
     public function setMediaAttribute($value)
     {
         if (is_array($value)) {
-            // $adjustedPaths = array_map(function ($path) {
-            //     return 'app/images/' . basename($path);
-            // }, $value);
-
-            // $this->attributes['media'] = json_encode($adjustedPaths);
+            $value = array_values($value);
         } elseif (is_object($value)) {
             // Convert objects to arrays
             $value = (array) $value;
