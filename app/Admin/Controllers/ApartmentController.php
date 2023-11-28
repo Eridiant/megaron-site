@@ -86,6 +86,8 @@ class ApartmentController extends AdminController
         $form->hidden('content.lang')->value($currentLanguage);
         $form->text('content.name', __('name-' . $currentLanguage));
         $form->textarea('content.description', __('description-' . $currentLanguage));
+        $form->textarea('content.meta_title', __('meta_title-' . $currentLanguage));
+        $form->textarea('content.meta_description', __('meta_description-' . $currentLanguage));
 
         $form->multipleImage('media', __('Images'))
             ->removable()

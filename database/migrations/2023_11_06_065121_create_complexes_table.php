@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreignId('neighborhood_id')->nullable();
             $table->json('media')->nullable();
             $table->string('location', 255)->nullable();
+            $table->text('rank')->nullable();
 
             $table->foreign('neighborhood_id')->references('id')->on('neighborhoods')->onDelete('cascade');
             $table->foreign('developer_id')->references('id')->on('developers')->onDelete('cascade');

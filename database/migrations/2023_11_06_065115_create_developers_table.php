@@ -18,6 +18,7 @@ return new class extends Migration
             $table->smallInteger('completed_objects')->nullable();
             $table->smallInteger('total_objects')->nullable();
             $table->json('media')->nullable();
+            $table->text('rank')->nullable();
         });
     }
 

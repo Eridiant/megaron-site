@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->string('meta_title', 255)->nullable();
             $table->text('meta_description')->nullable();
+            $table->text('keywords')->nullable();
 
             $table->foreign('complex_id')->references('id')->on('complexes')->onDelete('cascade');
 

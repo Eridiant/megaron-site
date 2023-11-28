@@ -31,6 +31,7 @@ class ComplexContent extends Model
         'description',
         'meta_title',
         'meta_description',
+        'keywords',
     ];
 
     /**
