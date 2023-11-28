@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('lang', 20)->nullable();
             $table->string('name', 255)->nullable();
             $table->text('description')->nullable();
+            $table->string('meta_title', 255)->nullable();
+            $table->text('meta_description')->nullable();
 
             $table->foreign('apartment_id')->references('id')->on('apartments')->onDelete('cascade');
 

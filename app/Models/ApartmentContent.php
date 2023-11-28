@@ -28,7 +28,9 @@ class ApartmentContent extends Model
         'apartment_id', 
         'lang', 
         'name', 
-        'description'
+        'description',
+        'meta_title',
+        'meta_description',
     ];
 
     /**

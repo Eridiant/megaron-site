@@ -28,7 +28,9 @@ class ComplexContent extends Model
         'complex_id', 
         'lang', 
         'name', 
-        'description'
+        'description',
+        'meta_title',
+        'meta_description',
     ];
 
     /**
