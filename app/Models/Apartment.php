@@ -34,6 +34,7 @@ class Apartment extends Model
         'living_area',
         'media',
         'status',
+        'rank',
     ];
 
     // Mutator to automatically encode the images to JSON before saving to the database

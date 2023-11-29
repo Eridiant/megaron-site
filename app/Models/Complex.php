@@ -32,6 +32,8 @@ class Complex extends Model
         'developer_id',
         'media' => 'json',
         'location',
+        'status',
+        'rank',
     ];
 
     // protected static function booted(): void

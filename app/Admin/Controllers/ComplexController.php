@@ -35,6 +35,8 @@ class ComplexController extends AdminController
         $grid->column('developer.slug', __('developer'));
         $grid->column('media', __('media'));
         $grid->column('location', __('location'));
+        $grid->column('status', __('status'));
+        $grid->column('rank', __('rating'));
 
         return $grid;
     }
@@ -83,6 +85,8 @@ class ComplexController extends AdminController
         $form->textarea('content.description', __('description-' . $currentLanguage));
         $form->textarea('content.meta_title', __('meta_title-' . $currentLanguage));
         $form->textarea('content.meta_description', __('meta_description-' . $currentLanguage));
+
+        $form->radio('status')->options(['0' => 'на проверке', '1'=> 'заблокировано', '5'=> 'не отображать', '9'=> 'активно'])->default('9');
 
         $form->multipleImage('media', __('Images'))
             ->removable()

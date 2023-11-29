@@ -20,8 +20,8 @@ return new class extends Migration
             $table->decimal('total_area', 10, 2)->nullable();
             $table->decimal('living_area', 10, 2)->nullable();
             $table->json('media')->nullable();
-            $table->tinyInteger('status')->default(1);
-            $table->text('rank')->nullable();
+            $table->tinyInteger('status')->default(0);
+            $table->decimal('rank', 2, 1)->nullable();
 
             $table->foreign('complex_id')->references('id')->on('complexes')->onDelete('cascade');
 
