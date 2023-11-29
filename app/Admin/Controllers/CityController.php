@@ -102,7 +102,8 @@ class CityController extends AdminController
         $form->hidden('trdescription.locale')->value($currentLanguage);
         $form->hidden('trdescription.column_name')->value('description');
         $form->textarea('trdescription.value', __('Description'));
-        $form->text('location', __('Location'));
+        $form->text('latitude', __('latitude'));
+        $form->text('longitude', __('longitude'));
         // $form->text('media', __('Media'));
 
         $form->multipleImage('media', __('Images'))

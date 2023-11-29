@@ -28,6 +28,8 @@ class Country extends Model
         'id',
         'name',
         'slug',
+        'latitude',
+        'longitude',
     ];
 
     public function cities()

@@ -72,6 +72,8 @@ class DeveloperController extends AdminController
         $form->hidden('trname.column_name')->value('name');
         $form->text('trname.value', __('Name'));
         $form->date('date_of_creation', __('Date of creation'));
+        $form->text('latitude', __('latitude'));
+        $form->text('longitude', __('longitude'));
         $form->text('completed_objects', __('Completed objects'));
         $form->text('total_objects', __('Total objects'));
         $form->hidden('trdescription.locale')->value($currentLanguage);

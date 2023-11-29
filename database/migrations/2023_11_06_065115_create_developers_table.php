@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('date_of_creation', 255)->nullable();
             $table->smallInteger('completed_objects')->nullable();
             $table->smallInteger('total_objects')->nullable();
+            $table->decimal('latitude', 10, 7)->nullable();
+            $table->decimal('longitude', 10, 7)->nullable();
             $table->json('media')->nullable();
             $table->text('rank')->nullable();
         });

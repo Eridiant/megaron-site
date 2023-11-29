@@ -31,7 +31,8 @@ class Complex extends Model
         'neighborhood_id',
         'developer_id',
         'media' => 'json',
-        'location',
+        'latitude',
+        'longitude',
         'status',
         'rank',
     ];

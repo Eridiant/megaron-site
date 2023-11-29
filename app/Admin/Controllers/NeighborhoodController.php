@@ -30,8 +30,6 @@ class NeighborhoodController extends AdminController
         $grid->column('id', __('Id'));
         $grid->column('city.slug', __('City'));
         $grid->column('slug', __('slug'));
-        $grid->column('location', __('Location'));
-        $grid->column('polygon', __('Polygon'));
         $grid->column('media', __('Media'));
 
         return $grid;
@@ -50,8 +48,6 @@ class NeighborhoodController extends AdminController
         $show->field('id', __('Id'));
         $show->field('trname.value', __('City'));
         $show->field('slug', __('slug'));
-        $show->field('location', __('Location'));
-        $show->field('polygon', __('Polygon'));
         $show->field('media', __('Media'));
 
         return $show;
@@ -78,7 +74,8 @@ class NeighborhoodController extends AdminController
         $form->hidden('trdescription.locale')->value($currentLanguage);
         $form->hidden('trdescription.column_name')->value('description');
         $form->textarea('trdescription.value', __('Description'));
-        $form->text('location', __('Location'));
+        $form->text('latitude', __('latitude'));
+        $form->text('longitude', __('longitude'));
         $form->textarea('polygon', __('Polygon'));
 
         $form->multipleImage('media', __('Images'))

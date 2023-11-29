@@ -30,6 +30,8 @@ class Developer extends Model
         'date_of_creation',
         'completed_objects',
         'total_objects',
+        'latitude',
+        'longitude',
         'media',
     ];
 

@@ -18,7 +18,8 @@ return new class extends Migration
             $table->foreignId('developer_id');
             $table->foreignId('neighborhood_id')->nullable();
             $table->json('media')->nullable();
-            $table->string('location', 255)->nullable();
+            $table->decimal('latitude', 10, 7)->nullable();
+            $table->decimal('longitude', 10, 7)->nullable();
             $table->tinyInteger('status')->default(0);
             $table->decimal('rank', 2, 1)->nullable();
 

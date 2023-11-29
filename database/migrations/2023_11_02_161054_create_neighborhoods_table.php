@@ -15,8 +15,9 @@ return new class extends Migration
             $table->id();
             $table->foreignId('city_id');
             $table->string('slug', 255);
-            $table->string('location', 255)->nullable();
-            $table->text('polygon')->nullable();
+            $table->decimal('latitude', 10, 7)->nullable();
+            $table->decimal('longitude', 10, 7)->nullable();
+            $table->json('polygon')->nullable();
             $table->json('media')->nullable();
 
             $table->foreign('city_id')->references('id')->on('cities')->onDelete('cascade');

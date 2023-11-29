@@ -34,7 +34,6 @@ class ComplexController extends AdminController
         $grid->column('neighborhood.slug', __('neighborhood'));
         $grid->column('developer.slug', __('developer'));
         $grid->column('media', __('media'));
-        $grid->column('location', __('location'));
         $grid->column('status', __('status'));
         $grid->column('rank', __('rating'));
 
@@ -55,7 +54,6 @@ class ComplexController extends AdminController
         $show->field('neighborhood.slug', __('neighborhood'));
         $show->field('developer.name', __('developer'));
         $show->field('media', __('media'));
-        $show->field('location', __('location'));
 
         return $show;
     }
@@ -78,7 +76,8 @@ class ComplexController extends AdminController
             ->options(Neighborhood::all()->pluck('slug','id'));
         $form->select('developer_id', __('developer_id'))
             ->options(Developer::all()->pluck('slug','id'));
-        $form->textarea('location', __('location'));
+        $form->text('latitude', __('latitude'));
+        $form->text('longitude', __('longitude'));
 
         $form->hidden('content.lang')->value($currentLanguage);
         $form->text('content.name', __('name-' . $currentLanguage));

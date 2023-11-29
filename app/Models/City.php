@@ -29,7 +29,8 @@ class City extends Model
         'id',
         'country_id',
         'slug',
-        'location',
+        'latitude',
+        'longitude',
         'media',
     ];
 

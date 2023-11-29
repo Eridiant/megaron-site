@@ -28,7 +28,8 @@ class Neighborhood extends Model
         'id',
         'city_id',
         'slug',
-        'location',
+        'latitude',
+        'longitude',
         'polygon',
         'media',
     ];
