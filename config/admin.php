@@ -406,5 +406,25 @@ return [
     */
     'extensions' => [
 
+        'latlong' => [
+
+            // Whether to enable this extension, defaults to true
+            'enable' => true,
+
+            // Specify the default provider
+            'default' => 'google',
+
+            // According to the selected provider above, fill in the corresponding api_key
+            'providers' => [
+
+                'google' => [
+                    'api_key' => '',
+                ],
+                
+                'yandex' => [
+                    'api_key' => '',
+                ],
+            ]
+        ]
     ],
 ];

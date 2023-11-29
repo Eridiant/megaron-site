@@ -76,8 +76,7 @@ class ComplexController extends AdminController
             ->options(Neighborhood::all()->pluck('slug','id'));
         $form->select('developer_id', __('developer_id'))
             ->options(Developer::all()->pluck('slug','id'));
-        $form->text('latitude', __('latitude'));
-        $form->text('longitude', __('longitude'));
+        $form->latlong('latitude', 'longitude', 'Position');
 
         $form->hidden('content.lang')->value($currentLanguage);
         $form->text('content.name', __('name-' . $currentLanguage));
