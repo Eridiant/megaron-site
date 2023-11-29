@@ -86,7 +86,12 @@ class ComplexController extends AdminController
         $form->textarea('content.meta_title', __('meta_title-' . $currentLanguage));
         $form->textarea('content.meta_description', __('meta_description-' . $currentLanguage));
 
-        $form->radio('status')->options(['0' => 'на проверке', '1'=> 'заблокировано', '5'=> 'не отображать', '9'=> 'активно'])->default('9');
+        $form->radio('status')->options([
+            '0' => 'на проверке',
+            '1' => 'заблокировано',
+            '5' => 'не отображать',
+            '9' => 'активно'
+        ])->default('9');
 
         $form->multipleImage('media', __('Images'))
             ->removable()
