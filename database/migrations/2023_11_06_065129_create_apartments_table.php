@@ -19,6 +19,8 @@ return new class extends Migration
             $table->decimal('cost', 15, 2)->nullable();
             $table->decimal('total_area', 10, 2)->nullable();
             $table->decimal('living_area', 10, 2)->nullable();
+            $table->string('type', 255);
+            $table->json('common_video')->nullable();
             $table->json('media')->nullable();
             $table->tinyInteger('status')->default(0);
             $table->decimal('rank', 2, 1)->nullable();

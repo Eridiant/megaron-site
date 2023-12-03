@@ -4,14 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use App\Models\Apartment;
 
 class SiteController extends Controller
 {
     public function index(): View
     {
+
+        $apartments = Apartment::all();
+
         return view('frontend.site.index', [
-            // 'user' => User::findOrFail($id)
-            'user' => 'xuser'
+            'apartments'   => $apartments,
         ]);
     }
 

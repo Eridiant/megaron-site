@@ -7,6 +7,8 @@ use App\Models\City;
 use App\Models\Complex;
 use App\Models\Developer;
 use App\Models\Neighborhood;
+use App\Models\EstateType;
+use App\Models\Apartment;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
@@ -36,6 +38,36 @@ class ComplexController extends AdminController
         $grid->column('media', __('media'));
         $grid->column('status', __('status'));
         $grid->column('rank', __('rating'));
+        // $grid->column('add_apartment', 'Add New')->display(function ($value, $column) {
+        //     // Assuming you have an 'id' field in your model
+        //     $id = 1; 
+    
+        //     // The route to your related model's create page
+        //     // You can pass parameters using query strings
+        //     $url = route('/apartment', ['param' => $id]);
+    
+        //     return "<a href='{$url}'>Add New Record</a>";
+        // });
+
+        // $grid->actions(function ($actions) {
+            // $actions->disableDelete();
+            // $actions->disableEdit();
+            // $actions->disableView();
+            // append an action.
+            // $id = $actions->getKey();
+            // $url = route('/admin/apartment', ['param' => $id]);
+            // $actions->append("<a href='/apartment'>Cr</a>");
+        
+            // prepend an action.
+            // $actions->prepend('<a href="/apartment">asdfasdf</a>');
+
+            // $actions->append(new Apartment());
+            // the array of data for the current row
+            // $actions->row;
+
+            // gets the current row primary key value
+            // $actions->getKey();
+        // });
 
         return $grid;
     }
@@ -66,7 +98,7 @@ class ComplexController extends AdminController
     protected function form()
     {
         $form = new Form(new Complex);
-
+        // dd($form);
         $currentLanguage = app()->getLocale();
 
         $form->text('slug', __('slug'));
@@ -76,11 +108,22 @@ class ComplexController extends AdminController
             ->options(Neighborhood::all()->pluck('slug','id'));
         $form->select('developer_id', __('developer_id'))
             ->options(Developer::all()->pluck('slug','id'));
-        $form->latlong('latitude', 'longitude', 'Position');
+        $form->multipleSelect('types', __('types'))
+            ->options(EstateType::all()->pluck('name','id'));
+        // $form->latlong('latitude', 'longitude', 'Position');
+        // $form->map('latitude', 'longitude', 'Position');
 
         $form->hidden('content.lang')->value($currentLanguage);
         $form->text('content.name', __('name-' . $currentLanguage));
         $form->textarea('content.description', __('description-' . $currentLanguage));
+        // $form->json('content.video', __('video-' . $currentLanguage));
+        // $form->listbox('content.videos', __('Videos'))
+        //     ->options([]) // Start with an empty list
+        //     ->settings([
+        //         'onAdd' => 'function(itemValue) { return itemValue; }', // Handle adding new items
+        //         'selectorMinimalHeight' => 300
+        //     ]);
+
         $form->textarea('content.meta_title', __('meta_title-' . $currentLanguage));
         $form->textarea('content.meta_description', __('meta_description-' . $currentLanguage));
 
@@ -91,6 +134,8 @@ class ComplexController extends AdminController
             '9' => 'активно'
         ])->default('9');
 
+        // $form->list('content.videos', __('Videoz'));
+        $form->list('common_video', __('Videos'));
         $form->multipleImage('media', __('Images'))
             ->removable()
             // ->sortable()

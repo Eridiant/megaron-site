@@ -9,6 +9,10 @@ class Apartment extends Model
 {
     // Disable automatic timestamps
     public $timestamps = false;
+    protected $casts = [
+        'types' => 'json',
+        'common_video' => 'json',
+    ];
 
     use HasFactory;
 
@@ -31,8 +35,10 @@ class Apartment extends Model
         'number_of_rooms',
         'cost',
         'total_area',
+        'type',
         'living_area',
-        'media',
+        'common_video' => 'json',
+        'media' => 'json',
         'status',
         'rank',
     ];

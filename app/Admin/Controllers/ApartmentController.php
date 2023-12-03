@@ -5,6 +5,7 @@ namespace App\Admin\Controllers;
 use Encore\Admin\Controllers\AdminController;
 use App\Models\Apartment;
 use App\Models\Complex;
+use App\Models\EstateType;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
@@ -79,10 +80,11 @@ class ApartmentController extends AdminController
         $form->select('complex_id', __('Complex'))
             ->options(Complex::all()->pluck('slug','id'));
         $form->text('number_of_rooms', __('number_of_rooms'));
+        $form->select('type', __('Type'))
+            ->options(EstateType::all()->pluck('name', 'id'));
         $form->currency('cost', __('cost'));
         $form->text('total_area', __('total_area'));
         $form->text('living_area', __('living_area'));
-        $form->text('status', __('status'));
 
         $form->hidden('content.lang')->value($currentLanguage);
         $form->text('content.name', __('name-' . $currentLanguage));
@@ -98,6 +100,7 @@ class ApartmentController extends AdminController
             '9' => 'активно'
         ])->default('9');
 
+        $form->list('common_video', __('Videos'));
         $form->multipleImage('media', __('Images'))
             ->removable()
             // ->sortable()

@@ -29,6 +29,7 @@ class ApartmentContent extends Model
         'lang', 
         'name', 
         'description',
+        'video' => 'json',
         'meta_title',
         'meta_description',
         'keywords',

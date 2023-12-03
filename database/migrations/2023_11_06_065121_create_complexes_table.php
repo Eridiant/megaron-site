@@ -17,6 +17,8 @@ return new class extends Migration
             $table->foreignId('city_id');
             $table->foreignId('developer_id');
             $table->foreignId('neighborhood_id')->nullable();
+            $table->json('types');
+            $table->json('common_video');
             $table->json('media')->nullable();
             $table->decimal('latitude', 10, 7)->nullable();
             $table->decimal('longitude', 10, 7)->nullable();

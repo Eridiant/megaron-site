@@ -418,7 +418,7 @@ return [
             'providers' => [
 
                 'google' => [
-                    'api_key' => '',
+                    'api_key' => 'AIzaSyD2FYsdSyKCF85BXwjTabp2lj0hk5YPWsc',
                 ],
                 
                 'yandex' => [
