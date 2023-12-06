@@ -10,6 +10,12 @@ class Neighborhood extends Model
     // Disable automatic timestamps
     public $timestamps = false;
 
+    protected $casts = [
+        'image' => 'json',
+        'common_video' => 'json',
+        'media' => 'json',
+    ];
+
     use HasFactory;
 
     /**
@@ -31,7 +37,10 @@ class Neighborhood extends Model
         'latitude',
         'longitude',
         'polygon',
-        'media',
+        'min_price',
+        'image' => 'json',
+        'common_video' => 'json',
+        'media' => 'json',
     ];
 
     // Mutator to automatically encode the images to JSON before saving to the database

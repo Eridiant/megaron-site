@@ -32,6 +32,7 @@ class Translation extends Model
         'column_name',
         'locale',
         'value',
+        'media',
     ];
 
     /**

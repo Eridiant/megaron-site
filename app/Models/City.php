@@ -11,6 +11,12 @@ class City extends Model
     // Disable automatic timestamps
     public $timestamps = false;
 
+    protected $casts = [
+        'image' => 'json',
+        'common_video' => 'json',
+        'media' => 'json',
+    ];
+
     use HasFactory;
 
     /**
@@ -31,7 +37,9 @@ class City extends Model
         'slug',
         'latitude',
         'longitude',
-        'media',
+        'image' => 'json',
+        'common_video' => 'json',
+        'media' => 'json',
     ];
 
     // Mutator to automatically encode the images to JSON before saving to the database

@@ -105,6 +105,11 @@ class CityController extends AdminController
         $form->latlong('latitude', 'longitude', 'Position');
         // $form->text('media', __('Media'));
 
+        $form->image('image', __('Image'))
+            ->disk('admin')
+            ->move('images/city')
+            ->rules('image');
+        $form->list('common_video', __('Videos'));
         $form->multipleImage('media', __('Images'))
             ->removable()
             // ->sortable()

@@ -80,6 +80,8 @@ class ApartmentController extends AdminController
         $form->select('complex_id', __('Complex'))
             ->options(Complex::all()->pluck('slug','id'));
         $form->text('number_of_rooms', __('number_of_rooms'));
+        $form->text('number_of_bedrooms', __('number_of_bedrooms'));
+        $form->text('number_of_bathrooms', __('number_of_bathrooms'));
         $form->select('type', __('Type'))
             ->options(EstateType::all()->pluck('name', 'id'));
         $form->currency('cost', __('cost'));
@@ -100,6 +102,10 @@ class ApartmentController extends AdminController
             '9' => 'активно'
         ])->default('9');
 
+        $form->image('image', __('Image'))
+            ->disk('admin')
+            ->move('images/apartment')
+            ->rules('image');
         $form->list('common_video', __('Videos'));
         $form->multipleImage('media', __('Images'))
             ->removable()

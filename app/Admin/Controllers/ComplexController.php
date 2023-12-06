@@ -135,6 +135,10 @@ class ComplexController extends AdminController
         ])->default('9');
 
         // $form->list('content.videos', __('Videoz'));
+        $form->image('image', __('Image'))
+            ->disk('admin')
+            ->move('images/apartment')
+            ->rules('image');
         $form->list('common_video', __('Videos'));
         $form->multipleImage('media', __('Images'))
             ->removable()

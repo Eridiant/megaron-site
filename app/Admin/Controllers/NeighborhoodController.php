@@ -77,6 +77,11 @@ class NeighborhoodController extends AdminController
         $form->latlong('latitude', 'longitude', 'Position');
         $form->textarea('polygon', __('Polygon'));
 
+        $form->image('image', __('Image'))
+            ->disk('admin')
+            ->move('images/neighborhood')
+            ->rules('image');
+        $form->list('common_video', __('Videos'));
         $form->multipleImage('media', __('Images'))
             ->removable()
             // ->sortable()

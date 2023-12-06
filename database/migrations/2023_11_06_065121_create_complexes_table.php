@@ -18,8 +18,10 @@ return new class extends Migration
             $table->foreignId('developer_id');
             $table->foreignId('neighborhood_id')->nullable();
             $table->json('types');
-            $table->json('common_video');
+            $table->json('image')->nullable();
+            $table->json('common_video')->nullable();
             $table->json('media')->nullable();
+            $table->decimal('min_price', 15, 2)->nullable();
             $table->decimal('latitude', 10, 7)->nullable();
             $table->decimal('longitude', 10, 7)->nullable();
             $table->tinyInteger('status')->default(0);

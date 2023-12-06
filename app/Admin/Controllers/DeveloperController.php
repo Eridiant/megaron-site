@@ -79,6 +79,11 @@ class DeveloperController extends AdminController
         $form->hidden('trdescription.column_name')->value('description');
         $form->textarea('trdescription.value', __('Description'));
 
+        $form->image('image', __('Image'))
+            ->disk('admin')
+            ->move('images/developer')
+            ->rules('image');
+        $form->list('common_video', __('Videos'));
         $form->multipleImage('media', __('Images'))
             ->removable()
             ->disk('admin')

@@ -9,9 +9,12 @@ class Complex extends Model
 {
     // Disable automatic timestamps
     public $timestamps = false;
+
     protected $casts = [
-        'types' => 'array',
-        'common_video' => 'array',
+        'types' => 'json',
+        'image' => 'json',
+        'common_video' => 'json',
+        'media' => 'json',
     ];
 
     use HasFactory;
@@ -35,8 +38,10 @@ class Complex extends Model
         'neighborhood_id',
         'developer_id',
         'types' => 'json',
+        'image' => 'json',
         'common_video' => 'json',
         'media' => 'json',
+        'min_price',
         'latitude',
         'longitude',
         'status',

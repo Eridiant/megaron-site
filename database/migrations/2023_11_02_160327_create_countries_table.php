@@ -18,6 +18,9 @@ return new class extends Migration
             $table->string('slug', 255);
             $table->decimal('latitude', 10, 7)->nullable();
             $table->decimal('longitude', 10, 7)->nullable();
+            $table->json('image')->nullable();
+            $table->json('common_video')->nullable();
+            $table->json('media')->nullable();
         });
 
         DB::table('countries')->insert([

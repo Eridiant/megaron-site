@@ -15,11 +15,14 @@ return new class extends Migration
             $table->id();
             $table->string('slug', 255);
             $table->foreignId('complex_id');
-            $table->integer('number_of_rooms')->nullable();
+            $table->tinyInteger('number_of_rooms')->nullable();
+            $table->tinyInteger('number_of_bedrooms')->nullable();
+            $table->tinyInteger('number_of_bathrooms')->nullable();
             $table->decimal('cost', 15, 2)->nullable();
             $table->decimal('total_area', 10, 2)->nullable();
             $table->decimal('living_area', 10, 2)->nullable();
             $table->string('type', 255);
+            $table->json('image')->nullable();
             $table->json('common_video')->nullable();
             $table->json('media')->nullable();
             $table->tinyInteger('status')->default(0);

@@ -10,6 +10,12 @@ class Country extends Model
     // Disable automatic timestamps
     public $timestamps = false;
 
+    protected $casts = [
+        'image' => 'json',
+        'common_video' => 'json',
+        'media' => 'json',
+    ];
+
     use HasFactory;
 
     /**
@@ -30,6 +36,10 @@ class Country extends Model
         'slug',
         'latitude',
         'longitude',
+        'min_price',
+        'image' => 'json',
+        'common_video' => 'json',
+        'media' => 'json',
     ];
 
     public function cities()

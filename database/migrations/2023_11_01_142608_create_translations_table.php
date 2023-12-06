@@ -17,7 +17,8 @@ return new class extends Migration
             $table->unsignedBigInteger('translatable_id');
             $table->string('column_name')->nullable();
             $table->string('locale', 10)->nullable();
-            $table->text('value');
+            $table->text('value')->nullable();
+            $table->json('media')->nullable();
 
             // You might want to index these columns for faster querying
             $table->index(['translatable_type', 'translatable_id', 'column_name', 'locale'], 'translations_index');

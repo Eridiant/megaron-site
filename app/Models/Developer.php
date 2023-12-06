@@ -10,6 +10,12 @@ class Developer extends Model
     // Disable automatic timestamps
     public $timestamps = false;
 
+    protected $casts = [
+        'image' => 'json',
+        'common_video' => 'json',
+        'media' => 'json',
+    ];
+
     use HasFactory;
 
     /**
@@ -32,7 +38,11 @@ class Developer extends Model
         'total_objects',
         'latitude',
         'longitude',
-        'media',
+        'min_price',
+        'image' => 'json',
+        'common_video' => 'json',
+        'media' => 'json',
+        'rank',
     ];
 
     // Mutator to automatically encode the images to JSON before saving to the database
