@@ -37,6 +37,7 @@ class Neighborhood extends Model
         'latitude',
         'longitude',
         'polygon',
+        'offers',
         'min_price',
         'image' => 'json',
         'common_video' => 'json',
