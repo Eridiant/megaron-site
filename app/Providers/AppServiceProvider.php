@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Models\Apartment;
+use App\Observers\ApartmentObserver;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +21,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        Apartment::observe(ApartmentObserver::class);
+
         $this->loadMigrationsFrom([
             'database/migrations',
         ]);

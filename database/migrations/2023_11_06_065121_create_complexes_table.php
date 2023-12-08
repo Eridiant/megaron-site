@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('complexes', function (Blueprint $table) {
             $table->id();
             $table->string('slug', 255);
+            $table->string('delivery_date', 255)->nullable();
             $table->foreignId('city_id');
             $table->foreignId('developer_id');
             $table->foreignId('neighborhood_id')->nullable();

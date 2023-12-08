@@ -18,7 +18,7 @@
                                 <p class="caption">{{$neighborhood->trname->value ?? ''}}</p>
                             </header>
                             <footer>
-                                <p><a href="#" class="encircle encircle-white target"><svg width="16" height="16"><use xlink:href="/images/icons.svg#arrow"></use></svg></a><span>({{$neighborhood->complexes->count()}} предложений)</span></p>
+                                <p><a href="#" class="encircle encircle-white target"><svg width="16" height="16"><use xlink:href="/images/icons.svg#arrow"></use></svg></a><span>({{$neighborhood->offers ?? 'нет '}} предложений)</span></p>
                             </footer>
                         </div>
                     </div>

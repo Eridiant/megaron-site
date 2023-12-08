@@ -30,9 +30,9 @@
                             </header>
                             <footer>
                                 <p><span>Country:</span> <span>United Arab Emirates</span></p>
-                                <p><span>Сдача объекта:</span> <span>2023</span></p>
+                                <p><span>Сдача объекта:</span> <span>{{$complex->delivery_date}}</span></p>
                                 <p><span>Варианты юнитов:</span> <span>Студио, 1спальня</span></p>
-                                <p><span>Starting price ($):</span> <span>327,780</span></p>
+                                <p><span>Starting price ($):</span> <span>{{number_format($complex->min_price, 0, '.', ' ') ?? ''}}</span></p>
                             </footer>
                         </div>
                     </div>
