@@ -8,11 +8,11 @@
         <div class="container" style="max-width: 1204px; margin-left: auto; margin-right: auto">
             <div class="first-wrapper">
                 <div class="first-text">
-                    <p class="title">Создай свой аукцион</p>
-                    <p>Получай предложения напрямую от застройщиков за 5$</p>
+                    <p class="title"><?= __('messages.create_auction'); ?></p>
+                    <p><?= __('messages.get_offers'); ?></p>
                     <a class="btn btn-white" href="#">
                         <span>
-                            <span>Создать</span>
+                            <span><?= __('messages.create'); ?></span>
                             <svg width="16" height="16"><use xlink:href="images/icons.svg#arrow"></use></svg>
                         </span>
                     </a>

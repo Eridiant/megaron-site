@@ -7,14 +7,14 @@
         </div>
         <div class="container" style="max-width: 1204px; margin-left: auto; margin-right: auto">
             <div class="estate-text">
-                <p class="title">Недвижимость В ОАЭ</p>
-                <p>Площадка №1 для аукциона</p>
+                <p class="title"><?= __('messages.real_estate_uae'); ?></p>
+                <p><?= __('messages.site_for_auction'); ?></p>
             </div>
             @include('frontend.common.search')
             <div class="estate-consultation">
                 <a class="btn btn-white" href="#">
                     <span>
-                        <span>Консультация</span>
+                        <span><?= __('messages.consultation'); ?></span>
                         <svg width="20" height="20">
                             <use xlink:href="/images/icons.svg#chat"></use>
                         </svg>

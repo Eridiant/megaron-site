@@ -31,13 +31,16 @@
                 <li class="nav-item"><a href="{{url('/contacts')}}">Контакты</a></li>
             </ul>
         </nav>
-    
+
         <div class="language">
-            <select class="language-select">
-                <option value="en">en</option>
+            <select class="language-select" onchange="location = this.value;">
+                <?php foreach ($langs as $lang): ?>
+                    <option {{$lang[1]}} value="{{url('/?lang=')}}{{$lang[0]}}">{{$lang[0]}}</option>
+                <?php endforeach; ?>
+                <!-- <option value="en">en</option>
                 <option value="es" selected>es</option>
                 <option value="fr">fr</option>
-                <option value="de">de</option>
+                <option value="de">de</option> -->
             </select>
         </div>
     
@@ -58,7 +61,7 @@
                 <svg width="24" height="24"><use xlink:href="/images/icons.svg#user"></use></svg>
             </div>
             <div class="login-link">
-                <span>Войти</span>
+                <span><?= __('messages.enter'); ?></span>
                 <svg width="20" height="20"><use xlink:href="/images/icons.svg#enter"></use></svg>
             </div>
         </a>
