@@ -3,7 +3,7 @@ $c = 'ru';
 ?>
 <section class="contacts container" style="max-width: 1204px; margin-left: auto; margin-right: auto">
     <div class="contacts-inf">
-        <p class="title">Контакты</p>
+        <p class="title"><?= __('messages.contacts'); ?></p>
         <div class="contact-link">
             <span>GR:</span>
             <a href="tel:+995706070141">+9 957 060 701 41</a>
@@ -16,11 +16,11 @@ $c = 'ru';
         </a>
         <address class="border">
             <svg width="24" height="24"><use xlink:href="/images/icons.svg#location"></use></svg>
-            <span>Дубай, ОАЭ, Swiss Tower, Office 204, Jumeirah Lake Towers</span>
+            <span><?= __('messages.what_is_auction'); ?></span>
         </address>
         <a href="#" class="btn btn-black">
             <span>
-                <span>контакты</span>
+                <span><?= __('messages.contacts'); ?></span>
                 <svg width="16" height="16"><use xlink:href="/images/icons.svg#arrow"></use></svg>
             </span>
         </a>

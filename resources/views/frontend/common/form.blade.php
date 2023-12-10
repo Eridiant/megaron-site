@@ -5,35 +5,35 @@
         </picture>
     </div>
     <div class="form-wrapper">
-        <p class="title">Получите консультацию</p>
-        <p class="form-desc">Оставьте заявку на сайте и получите бесплатную консультацию + презентацию</p>
+        <p class="title"><?= __('messages.get_consultation'); ?></p>
+        <p class="form-desc"><?= __('messages.leave_request'); ?></p>
 
         <form id="form" class="form-form" action="/api/message" method="post">
             <div class="form-inner">
                 <div class="form-inner-container">
-                    <label class="form-label" for="phone">ваш телефон:</label>
+                    <label class="form-label" for="phone"><?= __('messages.phone'); ?>:</label>
                     <input class="form-input" type="text" id="phone" name="phone" placeholder="+7" required>
                 </div>
-                <p class="form-label">как связаться?</p>
+                <p class="form-label"><?= __('messages.languages'); ?>?</p>
                 <div class="form-inner-checkbox">
                     <div class="form-inner-container">
                         <input type="checkbox" id="call" name="call">
-                        <label for="call">Позвонить</label>
+                        <label for="call"><?= __('messages.call'); ?></label>
                     </div>
                     <div class="form-inner-container">
                         <input type="checkbox" id="whatsapp" name="whatsapp">
-                        <label for="whatsapp">Отправить в WhatsApp</label>
+                        <label for="whatsapp"><?= __('messages.send_to'); ?> WhatsApp</label>
                     </div>
                     <div class="form-inner-container">
                         <input type="checkbox" id="telegram" name="telegram">
-                        <label for="telegram">Отправить в Telegram</label>
+                        <label for="telegram"><?= __('messages.send_to'); ?> Telegram</label>
                     </div>
                 </div>
             </div>
             <div>
                 <button class="btn btn-white" type="submit">
                     <span>
-                        <span>отправить</span>
+                        <span><?= __('messages.send'); ?></span>
                         <svg width="16" height="16"><use xlink:href="images/icons.svg#arrow"></use></svg>
                     </span>
                 </button>

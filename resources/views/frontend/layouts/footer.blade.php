@@ -6,28 +6,28 @@
         <nav class="nav footer-menu">
             <ul class="nav-list">
                 <li class="nav-item sub">
-                    <a href="{{url('/auction')}}">Аукцион</a>
+                    <a href="{{url('/auction')}}"><?= __('messages.auction'); ?></a>
                     <ul class="nav-sub">
-                        <li><a href="{{url('/auction')}}">Создать аукцион</a></li>
+                        <li><a href="{{url('/auction')}}"><?= __('messages.create_auction'); ?></a></li>
                     </ul>
                 </li>
                 <li class="nav-item sub">
-                    <a href="{{url('/properties')}}">Проекты</a>
+                    <a href="{{url('/properties')}}"><?= __('messages.projects'); ?></a>
                     <ul class="nav-sub">
-                        <li><a href="{{url('/properties')}}">Страница фильтра</a></li>
-                        <li><a href="{{url('/properties')}}">Страница объекта</a></li>
+                        <li><a href="{{url('/properties')}}"><?= __('messages.filter_page'); ?></a></li>
+                        <li><a href="{{url('/properties')}}"><?= __('messages.object_page'); ?></a></li>
                     </ul>
                 </li>
-                <li class="nav-item"><a href="{{url('/news')}}">Новости</a></li>
+                <li class="nav-item"><a href="{{url('/news')}}"><?= __('messages.news'); ?></a></li>
                 <li class="nav-item sub">
-                    <a href="{{url('/about')}}">О нас</a>
+                    <a href="{{url('/about')}}"><?= __('messages.about'); ?></a>
                     <ul class="nav-sub">
-                        <li><a href="{{url('/guide')}}">Руководство по покупке</a></li>
-                        <li><a href="{{url('/')}}">Брокерам</a></li>
+                        <li><a href="{{url('/guide')}}"><?= __('messages.buying_guide'); ?></a></li>
+                        <li><a href="{{url('/')}}"><?= __('messages.brokers'); ?></a></li>
                     </ul>
                 </li>
-                <li class="nav-item"><a href="{{url('/')}}">Новостройки</a></li>
-                <li class="nav-item"><a href="{{url('/contacts')}}">Контакты</a></li>
+                <li class="nav-item"><a href="{{url('/')}}"><?= __('messages.new_building'); ?></a></li>
+                <li class="nav-item"><a href="{{url('/contacts')}}"><?= __('messages.contacts'); ?></a></li>
             </ul>
         </nav>
         <div class="contact footer-contact">
@@ -38,16 +38,14 @@
                 <a href="{{url('/')}}"><svg width="27" height="24"><use xlink:href="/images/icons.svg#viber"></use></svg></a>
             </div>
             <form action="{{url('/')}}" method="post" class="search">
-                <input placeholder="поиск" type="text" class="search-input" />
+                <input placeholder="<?= __('messages.search'); ?>" type="text" class="search-input" />
                 <button type="submit"><svg width="20" height="20"><use xlink:href="/images/icons.svg#search"></use></svg></button>
             </form>
         </div>
-        <div class="footer-object">
-            Дубай, ОАЭ, Swiss Tower, Office 204, Jumeirah Lake Towers
-        </div>
+        <div class="footer-object"><?= __('messages.address'); ?></div>
         <div class="footer-rights">
             <p>© Megaron 2007</p>
-            <a href="{{url('/')}}">Политика конфиденциальности</a>
+            <a href="{{url('/')}}"><?= __('messages.privacy_policy'); ?></a>
         </div>
         <div class="footer-mail">
             <a href="mailto:megaron@gmail.com" class="border">

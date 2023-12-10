@@ -1,7 +1,7 @@
 <section class="district">
     <div class="container-lg" style="max-width: 1920px; margin-left: auto; margin-right: auto">
         <div class="container" style="max-width: 1204px; margin-left: auto; margin-right: auto">
-            <p class="title">Районы и проекты</p>
+            <p class="title"><?= __('messages.districts_and_projects'); ?></p>
         </div>
         <div class="swiper district-swiper card white">
             <div class="swiper-wrapper">
@@ -14,11 +14,11 @@
                         </div>
                         <div class="card-content">
                             <header>
-                                <p class="subtitle">район</p>
+                                <p class="subtitle"><?= __('messages.neighborhood'); ?></p>
                                 <p class="caption">{{$neighborhood->trname->value ?? ''}}</p>
                             </header>
                             <footer>
-                                <p><a href="#" class="encircle encircle-white target"><svg width="16" height="16"><use xlink:href="/images/icons.svg#arrow"></use></svg></a><span>({{$neighborhood->offers ?? 'нет '}} предложений)</span></p>
+                                <p><a href="#" class="encircle encircle-white target"><svg width="16" height="16"><use xlink:href="/images/icons.svg#arrow"></use></svg></a><span>({{$neighborhood->offers ?? 'нет '}} <?= trans_choice('messages.sentences', $neighborhood->offers); ?>)</span></p>
                             </footer>
                         </div>
                     </div>

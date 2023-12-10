@@ -2,9 +2,9 @@
     <!--#include virtual="/parts/common/search.html" -->
     <div class="apartment-wrapper">
         <div class="apartment-choice">
-            <a class="current" href="#">самые подходящие</a>
-            <a href="#">самые дешевые</a>
-            <a href="#">самые дорогие</a>
+            <a class="current" href="#"><?= __('messages.suitable'); ?></a>
+            <a href="#"><?= __('messages.cheapest'); ?></a>
+            <a href="#"><?= __('messages.expensive'); ?></a>
         </div>
         <div class="apartment-items">
             <div class="apartment-item">

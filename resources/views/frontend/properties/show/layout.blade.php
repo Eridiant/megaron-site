@@ -1,5 +1,5 @@
 <section class="layout container" style="max-width: 1204px; margin-left: auto; margin-right: auto">
-    <p class="title">Планировки</p>
+    <p class="title"><?= __('messages.layouts'); ?></p>
     <div class="layout-items">
         <div class="layout-item">
             <p>2 спальни</p>

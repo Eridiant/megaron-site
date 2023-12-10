@@ -11,5 +11,5 @@
         @include('frontend.common._flat')
         @include('frontend.common._flat')
     </div>
-    <div class="flats-more more"><a href="#" id="flats-more">Загрузить еще</a></div>
+    <div class="flats-more more"><a href="#" id="flats-more"><?= __('messages.load_more'); ?></a></div>
 </section>

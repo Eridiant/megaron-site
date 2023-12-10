@@ -1,5 +1,5 @@
 <section class="experts container" style="max-width: 1204px; margin-left: auto; margin-right: auto">
-    <p class="title">Наши специалисты</p>
+    <p class="title"><?= __('messages.our_experts'); ?></p>
     <div class="swiper experts-swiper card white">
         <div class="swiper-wrapper text-white shadow-black">
             <div class="swiper-slide destination" data-class="expert">
@@ -16,7 +16,7 @@
                         <div>
                             <p class="subtitle">Брокер по продаже недвижимости</p>
                             <p class="caption">Пермяков андрей</p>
-                            <p>Языки: Английский, Русский</p>
+                            <p><?= __('messages.languages'); ?>: Английский, Русский</p>
                         </div>
                         <aside>
                             <a href="#" class="encircle encircle-white-black"><svg width="20" height="20"><use xlink:href="images/icons.svg#telegram"></use></svg></a>

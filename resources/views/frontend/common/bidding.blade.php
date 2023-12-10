@@ -2,15 +2,13 @@
     <div class="bidding-wrapper">
         <div class="bidding-desc">
             <div class="bidding-inner">
-                <p class="title">Что такое аукцион</p>
-                <p>
-                    Аукцион сэкономит Ваше время и предоставит Вам лучшие предложения от надежных застройщиков. Быстро, выгодно и качественно.
-                </p>
+                <p class="title"><?= __('messages.what_is_auction'); ?></p>
+                <p><?= __('messages.auction_description'); ?></p>
             </div>
             <div>
                 <a href="#" class="btn btn-blue">
                     <span>
-                        <span>Создать аукцион</span>
+                        <span><?= __('messages.create_auction'); ?></span>
                         <svg width="16" height="16"><use xlink:href="images/icons.svg#arrow"></use></svg>
                     </span>
                 </a>

@@ -1,8 +1,8 @@
 <section class="projects">
     <div class="container" style="max-width: 1204px; margin-left: auto; margin-right: auto">
-        <p class="title">Надежные проекты</p>
+        <p class="title"><?= __('messages.reliable_projects'); ?></p>
         <div class="projects-switch">
-            <a href="#" class="active" data-type="all">Все</a>
+            <a href="#" class="active" data-type="all"><?= __('messages.all'); ?></a>
             <a href="#" data-type="flats">Квартира</a>
             <span>
                 <a href="#" data-type="villa">Виллы</a>
@@ -23,16 +23,16 @@
                                 <img src="/uploads/{{$complex->media[0] ?? 'complex/default.jpg'}}" alt="">
                             </picture>
                         </div>
-                        <a href="#" class="card-active border border-white target">Посмотреть&#8195;<svg width="16" height="16"><use xlink:href="/images/icons.svg#arrow"></use></svg></a>
+                        <a href="#" class="card-active border border-white target"><?= __('messages.see'); ?>&#8195;<svg width="16" height="16"><use xlink:href="/images/icons.svg#arrow"></use></svg></a>
                         <div class="card-content">
                             <header>
                                 <p class="caption">{{$complex->content->name ?? 'complex'}}</p>
                             </header>
                             <footer>
-                                <p><span>Country:</span> <span>United Arab Emirates</span></p>
-                                <p><span>Сдача объекта:</span> <span>{{$complex->delivery_date}}</span></p>
-                                <p><span>Варианты юнитов:</span> <span>Студио, 1спальня</span></p>
-                                <p><span>Starting price ($):</span> <span>{{number_format($complex->min_price, 0, '.', ' ') ?? ''}}</span></p>
+                                <p><span><?= __('messages.completion'); ?>:</span> <span>United Arab Emirates</span></p>
+                                <p><span><?= __('messages.see'); ?>:</span> <span>{{$complex->delivery_date}}</span></p>
+                                <p><span><?= __('messages.estate_options'); ?>:</span> <span>Студио, 1спальня</span></p>
+                                <p><span><?= __('messages.see'); ?> ($):</span> <span>{{number_format($complex->min_price, 0, '.', ' ') ?? ''}}</span></p>
                             </footer>
                         </div>
                     </div>

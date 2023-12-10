@@ -1,6 +1,6 @@
 <section class="offer">
     <div class="container" style="max-width: 1204px; margin-left: auto; margin-right: auto">
-        <p class="title">Горячие предложения<span class="offer-fire"><svg width="16" height="20"><use xlink:href="/images/icons.svg#fire"></use></svg></span></p>
+        <p class="title"><?= __('messages.hot_offers'); ?><span class="offer-fire"><svg width="16" height="20"><use xlink:href="/images/icons.svg#fire"></use></svg></span></p>
         <div class="swiper offer-swiper card">
             <div class="swiper-wrapper">
                 <?php foreach ($apartments as $apartment): ?>
@@ -15,26 +15,26 @@
                                 <a class="card-icon card-heart" href="#"><svg width="21" height="18"><use xlink:href="/images/icons.svg#heart"></use></svg></a>
                                 <a class="card-icon card-location" href="#">
                                     <p><svg width="21" height="21"><use xlink:href="/images/icons.svg#location"></use></svg></p>
-                                    <span>смотреть на карте</span>
+                                    <span><?= __('messages.on_the_map'); ?></span>
                                 </a>
                             </div>
                             <header>
                                 <p class="subtitle">{{$apartment->content->name ?? 'apartment'}}</p>
                                 <div>
-                                    <p>Район: {{$apartment->complex->neighborhood->trname->value ?? 'neighborhood'}}, {{$apartment->complex->city->trname->value ?? 'city'}}</p>
-                                    <p>Застройщик: {{$apartment->complex->developer->trname->value ?? 'complex'}}</p>
+                                    <p><?= __('messages.neighborhood'); ?>: {{$apartment->complex->neighborhood->trname->value ?? 'neighborhood'}}, {{$apartment->complex->city->trname->value ?? 'city'}}</p>
+                                    <p><?= __('messages.developer'); ?>: {{$apartment->complex->developer->trname->value ?? 'complex'}}</p>
                                 </div>
                                 <div class="card-column">
                                     <p>
-                                        <span>Площадь</span>
+                                        <span><?= __('messages.area'); ?></span>
                                         <span>{{$apartment->total_area}} м<sup>2</sup></span>
                                     </p>
                                     <p>
-                                        <span>Спален</span>
+                                        <span><?= __('messages.bedroom'); ?></span>
                                         <span>{{$apartment->number_of_rooms}}</span>
                                     </p>
                                     <p>
-                                        <span>Ванн</span>
+                                        <span><?= __('messages.bathroom'); ?></span>
                                         <span>{{$apartment->number_of_bathrooms}}</span>
                                     </p>
                                 </div>
@@ -44,7 +44,7 @@
                                 <div class="card-row">
                                     <a href="#" class="btn btn-blue target">
                                         <span>
-                                            <span>Посмотреть</span>
+                                            <span><?= __('messages.see'); ?></span>
                                             <svg width="16" height="16"><use xlink:href="/images/icons.svg#arrow"></use></svg>
                                         </span>
                                     </a>

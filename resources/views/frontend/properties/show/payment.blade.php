@@ -1,5 +1,5 @@
 <section class="payment container" style="max-width: 1204px; margin-left: auto; margin-right: auto">
-    <p class="title">План оплаты</p>
+    <p class="title"><?= __('messages.payment_plan'); ?></p>
     <div class="payment-table">
         <div class="payment-table">
             <table>

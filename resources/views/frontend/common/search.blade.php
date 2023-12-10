@@ -1,6 +1,6 @@
 <form class="form-estate" action="/search" method="post">
     <div class="form-group">
-        <label for="estate">Что ищете?</label>
+        <label for="estate"><?= __('messages.your_search'); ?>?</label>
         <div class="form-wrapper">
             <select class="form-control" id="estate" name="estate">
                 <option value="apartment">Квартиру</option>
@@ -10,16 +10,16 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="status">Статус</label>
+        <label for="status"><?= __('messages.status'); ?></label>
         <div class="form-wrapper">
             <select class="form-control" id="status" name="status">
-                <option value="new">Новостройки</option>
-                <option value="secondary">Вторичка</option>
+                <option value="new"><?= __('messages.new_building'); ?></option>
+                <option value="secondary"><?= __('messages.secondary'); ?></option>
             </select>
         </div>
     </div>
     <div class="form-group">
-        <label for="bedrooms">Спален</label>
+        <label for="bedrooms"><?= __('messages.bedroom'); ?></label>
         <div class="form-wrapper">
             <select class="form-control" id="bedrooms" name="bedrooms">
                 <option value="1">1</option>
@@ -31,7 +31,7 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="price">Цена от</label>
+        <label for="price"><?= __('messages.price'); ?></label>
         <div class="form-wrapper">
             <div class="form-inner">
                 <input type="text" class="form-control" id="price" name="price">
@@ -41,7 +41,7 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="currency">Валюта</label>
+        <label for="currency"><?= __('messages.currency'); ?></label>
         <div class="form-wrapper">
             <select class="form-control" id="currency" name="currency">
                 <option value="RUB">RUB</option>
@@ -51,14 +51,14 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="city">Город</label>
+        <label for="city"><?= __('messages.city'); ?></label>
         <div class="form-wrapper">
             <input type="text" class="form-control" id="city" name="city">
         </div>
     </div>
     <button type="submit" class="btn btn-blue">
         <span>
-            <span>Поиск</span>
+            <span><?= __('messages.search'); ?></span>
             <svg width="16" height="16"><use xlink:href="images/icons.svg#arrow"></use></svg>
         </span>
     </button>

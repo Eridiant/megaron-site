@@ -1,5 +1,5 @@
 <section class="event container" style="max-width: 1204px; margin-left: auto; margin-right: auto">
-    <p class="title">Журнал</p>
+    <p class="title"><?= __('messages.event'); ?></p>
     <div class="event-items">
         <div class="event-item">
             <div class="event-image">
@@ -15,7 +15,7 @@
                     </div>
                     <a href="#" class="btn btn-white-black dt">
                         <span>
-                            <span>подробнее</span>
+                            <span><?= __('messages.more'); ?></span>
                             <svg width="20" height="20">
                                 <use xlink:href="images/icons.svg#chat"></use>
                             </svg>
@@ -147,6 +147,6 @@
         </div>
     </div>
     <div class="event-more more">
-        <a href="#" id="event-more">посмотреть еще</a>
+        <a href="#" id="event-more"><?= __('messages.see_more'); ?></a>
     </div>
 </section>

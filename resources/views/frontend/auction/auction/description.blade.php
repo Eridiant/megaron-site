@@ -1,6 +1,6 @@
 <section class="description container" style="max-width: 1204px; margin-left: auto; margin-right: auto">
     <div class="description-wrapper">
-        <p class="title">Как создать аукцион</p>
+        <p class="title"><?= __('messages.how_create_auction'); ?></p>
         <a href="#" class="video"></a>
         <div class="description-image">
             <picture>
