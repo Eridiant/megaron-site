@@ -94,6 +94,11 @@ class ApartmentController extends AdminController
         $form->textarea('content.meta_title', __('meta_title-' . $currentLanguage));
         $form->textarea('content.meta_description', __('meta_description-' . $currentLanguage));
 
+        $form->radio('property_type')->options([
+            '1' => 'первичка',
+            '2' => 'вторичка',
+        ])->default('1');
+
         $form->radio('status')->options([
             '0' => 'на проверке',
             '1' => 'заблокировано',

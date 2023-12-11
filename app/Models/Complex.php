@@ -12,6 +12,7 @@ class Complex extends Model
 
     protected $casts = [
         'types' => 'json',
+        'number_of_rooms' => 'json',
         'image' => 'json',
         'common_video' => 'json',
         'media' => 'json',
@@ -38,6 +39,7 @@ class Complex extends Model
         'neighborhood_id',
         'developer_id',
         'types' => 'json',
+        'number_of_rooms' => 'json',
         'image' => 'json',
         'common_video' => 'json',
         'media' => 'json',

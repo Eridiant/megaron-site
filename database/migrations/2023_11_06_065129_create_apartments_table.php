@@ -21,6 +21,7 @@ return new class extends Migration
             $table->decimal('cost', 15, 2)->nullable();
             $table->decimal('total_area', 10, 2)->nullable();
             $table->decimal('living_area', 10, 2)->nullable();
+            $table->tinyInteger('property_type')->default(1);
             $table->string('type', 255);
             $table->json('image')->nullable();
             $table->json('common_video')->nullable();
@@ -31,6 +32,8 @@ return new class extends Migration
             $table->foreign('complex_id')->references('id')->on('complexes')->onDelete('cascade');
 
             $table->index('complex_id');
+            $table->index('property_type');
+            $table->index('type');
         });
     }
 

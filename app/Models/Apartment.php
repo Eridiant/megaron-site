@@ -40,6 +40,7 @@ class Apartment extends Model
         'cost',
         'total_area',
         'living_area',
+        'property_type',
         'type',
         'image' => 'json',
         'common_video' => 'json',

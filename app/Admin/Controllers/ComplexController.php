@@ -114,6 +114,15 @@ class ComplexController extends AdminController
         // $form->latlong('latitude', 'longitude', 'Position');
         // $form->map('latitude', 'longitude', 'Position');
 
+        $form->multipleSelect('number_of_rooms')->options([
+            '0' => 'Студия',
+            '1' => '1 комнатная',
+            '2' => '2 комнатная',
+            '3' => '3 комнатная',
+            '4' => '4 комнатная',
+            '5' => '5 комнатная',
+        ]);
+
         $form->hidden('content.lang')->value($currentLanguage);
         $form->text('content.name', __('name-' . $currentLanguage));
         $form->textarea('content.description', __('description-' . $currentLanguage));
