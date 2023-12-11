@@ -16,7 +16,7 @@ $c = 'ru';
         </a>
         <address class="border">
             <svg width="24" height="24"><use xlink:href="/images/icons.svg#location"></use></svg>
-            <span><?= __('messages.what_is_auction'); ?></span>
+            <span><?= __('messages.address'); ?></span>
         </address>
         <a href="#" class="btn btn-black">
             <span>
