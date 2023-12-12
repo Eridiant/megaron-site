@@ -31,7 +31,11 @@
                             <footer>
                                 <p><span><?= __('messages.country'); ?>:</span> <span>United Arab Emirates</span></p>
                                 <p><span><?= __('messages.completion'); ?>:</span> <span>{{$complex->delivery_date}}</span></p>
-                                <p><span><?= __('messages.estate_options'); ?>:</span> <span>Студио, 1спальня</span></p>
+                                <p><span><?= __('messages.estate_options'); ?>:</span> <span>
+                                    <?php foreach ($complex->types as $type): ?>
+                                        {{$types[$type] ?? ''}}
+                                    <?php endforeach; ?>
+                                </span></p>
                                 <p><span><?= __('messages.starting_price'); ?> ($):</span> <span>{{number_format($complex->min_price, 0, '.', ' ') ?? ''}}</span></p>
                             </footer>
                         </div>
