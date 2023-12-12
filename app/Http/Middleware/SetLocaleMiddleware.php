@@ -39,6 +39,10 @@ class SetLocaleMiddleware
 
         // App::setLocale($locale);
 
+        // back();
+        // redirect()->back();
+        // dd($request);
+
         return $next($request);
     }
 }
