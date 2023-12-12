@@ -102,7 +102,8 @@ class ComplexController extends AdminController
         $currentLanguage = app()->getLocale();
 
         $form->text('slug', __('slug'));
-        $form->date('delivery_date', __('Object delivery date'));
+        $form->datetime('delivery_date', __('Object delivery date'))->format('YYYY-MM-DD');
+
         $form->select('city_id', __('City'))
             ->options(City::all()->pluck('slug','id'));
         $form->select('neighborhood_id', __('neighborhood_id'))

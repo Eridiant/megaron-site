@@ -14,12 +14,12 @@ return new class extends Migration
         Schema::create('complexes', function (Blueprint $table) {
             $table->id();
             $table->string('slug', 255);
-            $table->string('delivery_date', 255)->nullable();
+            $table->timestamp('delivery_date')->nullable();
             $table->foreignId('city_id');
             $table->foreignId('developer_id');
             $table->foreignId('neighborhood_id')->nullable();
             $table->json('types');
-            $table->json('number_of_rooms');
+            $table->json('number_of_rooms')->nullable();
             $table->json('image')->nullable();
             $table->json('common_video')->nullable();
             $table->json('media')->nullable();

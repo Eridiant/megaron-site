@@ -30,8 +30,7 @@
                             </header>
                             <footer>
                                 <p><span><?= __('messages.country'); ?>:</span> <span>United Arab Emirates</span></p>
-                                <p><span><?= __('messages.completion'); ?>:</span> <span>{{$complex->delivery_date}}</span></p>
-                                <p><span><?= __('messages.estate_options'); ?>:</span> <span>
+                                <p><span><?= __('messages.completion'); ?>:</span> <span>{{$complex->delivery_date->format('Y')}}</span></p>
                                     <?php foreach ($complex->types as $type): ?>
                                         {{$types[$type] ?? ''}}
                                     <?php endforeach; ?>

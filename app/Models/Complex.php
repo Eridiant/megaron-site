@@ -16,6 +16,7 @@ class Complex extends Model
         'image' => 'json',
         'common_video' => 'json',
         'media' => 'json',
+        'delivery_date' => 'datetime'
     ];
 
     use HasFactory;
@@ -35,6 +36,7 @@ class Complex extends Model
     protected $fillable = [
         'id',
         'slug',
+        'delivery_date',
         'city_id',
         'neighborhood_id',
         'developer_id',
