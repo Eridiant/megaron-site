@@ -1,43 +1,43 @@
 <footer class="footer container-lg" style="max-width: 1920px; margin-left: auto; margin-right: auto">
     <div class="container" style="max-width: 1204px; margin-left: auto; margin-right: auto">
         <div class="logo footer-logo">
-            <a href="{{url('/')}}"><svg><use xlink:href="/images/icons.svg#logo"></use></svg></a>
+            <a href="{{route('index')}}"><svg><use xlink:href="/images/icons.svg#logo"></use></svg></a>
         </div>
         <nav class="nav footer-menu">
             <ul class="nav-list">
                 <li class="nav-item sub">
-                    <a href="{{url('/auction')}}"><?= __('messages.auction'); ?></a>
+                    <a href="{{route('auction')}}"><?= __('messages.auction'); ?></a>
                     <ul class="nav-sub">
-                        <li><a href="{{url('/auction')}}"><?= __('messages.create_auction'); ?></a></li>
+                        <li><a href="{{route('auction')}}"><?= __('messages.create_auction'); ?></a></li>
                     </ul>
                 </li>
                 <li class="nav-item sub">
-                    <a href="{{url('/properties')}}"><?= __('messages.projects'); ?></a>
+                    <a href="{{route('properties')}}"><?= __('messages.projects'); ?></a>
                     <ul class="nav-sub">
-                        <li><a href="{{url('/properties')}}"><?= __('messages.filter_page'); ?></a></li>
-                        <li><a href="{{url('/properties')}}"><?= __('messages.object_page'); ?></a></li>
+                        <li><a href="{{route('properties')}}"><?= __('messages.filter_page'); ?></a></li>
+                        <li><a href="{{route('properties')}}"><?= __('messages.object_page'); ?></a></li>
                     </ul>
                 </li>
-                <li class="nav-item"><a href="{{url('/news')}}"><?= __('messages.news'); ?></a></li>
+                <li class="nav-item"><a href="{{route('news')}}"><?= __('messages.news'); ?></a></li>
                 <li class="nav-item sub">
                     <a href="{{url('/about')}}"><?= __('messages.about'); ?></a>
                     <ul class="nav-sub">
-                        <li><a href="{{url('/guide')}}"><?= __('messages.buying_guide'); ?></a></li>
-                        <li><a href="{{url('/')}}"><?= __('messages.brokers'); ?></a></li>
+                        <li><a href="{{route('guide')}}"><?= __('messages.buying_guide'); ?></a></li>
+                        <li><a href="{{route('index')}}"><?= __('messages.brokers'); ?></a></li>
                     </ul>
                 </li>
-                <li class="nav-item"><a href="{{url('/')}}"><?= __('messages.new_building'); ?></a></li>
-                <li class="nav-item"><a href="{{url('/contacts')}}"><?= __('messages.contacts'); ?></a></li>
+                <li class="nav-item"><a href="{{route('index')}}"><?= __('messages.new_building'); ?></a></li>
+                <li class="nav-item"><a href="{{route('contacts')}}"><?= __('messages.contacts'); ?></a></li>
             </ul>
         </nav>
         <div class="contact footer-contact">
             <div class="contact-link">
                 <a href="{{url('/user/favorites')}}"><svg width="27" height="24"><use xlink:href="/images/icons.svg#heart"></use></svg></a>
                 <a href="tel:+995706070141">+9 957 060 701 41</a>
-                <a href="{{url('/')}}"><svg width="27" height="24"><use xlink:href="/images/icons.svg#telegram"></use></svg></a>
-                <a href="{{url('/')}}"><svg width="27" height="24"><use xlink:href="/images/icons.svg#viber"></use></svg></a>
+                <a href="{{route('index')}}"><svg width="27" height="24"><use xlink:href="/images/icons.svg#telegram"></use></svg></a>
+                <a href="{{route('index')}}"><svg width="27" height="24"><use xlink:href="/images/icons.svg#viber"></use></svg></a>
             </div>
-            <form action="{{url('/')}}" method="post" class="search">
+            <form action="{{route('index')}}" method="post" class="search">
                 <input placeholder="<?= __('messages.search'); ?>" type="text" class="search-input" />
                 <button type="submit"><svg width="20" height="20"><use xlink:href="/images/icons.svg#search"></use></svg></button>
             </form>
@@ -45,7 +45,7 @@
         <div class="footer-object"><?= __('messages.address'); ?></div>
         <div class="footer-rights">
             <p>© Megaron 2007</p>
-            <a href="{{url('/')}}"><?= __('messages.privacy_policy'); ?></a>
+            <a href="{{route('index')}}"><?= __('messages.privacy_policy'); ?></a>
         </div>
         <div class="footer-mail">
             <a href="mailto:megaron@gmail.com" class="border">

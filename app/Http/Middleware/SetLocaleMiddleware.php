@@ -19,6 +19,20 @@ class SetLocaleMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
+        $langPrefix = ltrim($request->route()->getPrefix(), '/');
+
+        // dd($request->segment(1) );
+        // dd(request()->segment(1, ''));
+        // dd($langPrefix);
+        
+        if ($langPrefix) {
+            App::setLocale($langPrefix);
+        }
+
+        // dd($request);
+
+        return $next($request);
+
         $locale = Cookie::get('locale'); // dd($locale);
 
         if (!$lang = $request->query('lang')) {
@@ -27,7 +41,6 @@ class SetLocaleMiddleware
         }
 
         $langs = Language::where('active', 1)->pluck("code")->toArray();
-        // dd($langs);
 
         if (!in_array($lang, $langs)) {
             abort(400);

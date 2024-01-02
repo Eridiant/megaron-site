@@ -17,6 +17,7 @@ class SiteController extends Controller
         $complexes = Complex::with('content')->where('status', '>', 8)->get();
         $apartments = Apartment::with('content')->where('status', '>', 8)->get();
         $types = EstateType::all()->pluck('name', 'id')->toArray();
+        // dd($types);
 
         return view('frontend.site.index', [
             'neighborhoods' => $neighborhoods,

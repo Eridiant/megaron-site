@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuctionController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Services\Localization\LocalizationService;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,30 +21,36 @@ use App\Http\Controllers\Admin\AdminController;
 |
 */
 
-Route::get('/', [SiteController::class, 'index']);
-Route::get('/about', [SiteController::class, 'about']);
-Route::get('/contacts', [SiteController::class, 'contacts']);
-Route::get('/guide', [SiteController::class, 'guide']);
+// Route::get('/', 'SiteController@index');
+// Route::get('/', [SiteController::class, 'index']);
 
-Route::group(['prefix' => 'auction'], function() {
-    Route::get('/', [AuctionController::class, 'auction']);
-});
-
-Route::group(['prefix' => 'properties'], function() {
-    Route::get('/', [PropertiesController::class, 'properties']);
-    Route::get('/{properties:slug}', [PropertiesController::class, 'show']);
-});
-
-Route::group(['prefix' => 'apartments'], function() {
-    Route::get('/', [ApartmentsController::class, 'apartments']);
-});
-
-Route::group(['prefix' => 'user'], function() {
-    Route::get('/', [UserController::class, 'index']);
-    Route::get('/favorites', [UserController::class, 'favorites']);
-});
-
-Route::group(['prefix' => 'news'], function() {
-    Route::get('/', [NewsController::class, 'news']);
-    Route::get('/{news:slug}', [NewsController::class, 'show']);
-});
+Route::group(
+    [
+        'prefix' => LocalizationService::locale(),
+        'middleware' => 'setLocale',
+    ],
+    function() {
+        Route::get('/', [SiteController::class, 'index'])->name('index');
+        Route::get('/about', [SiteController::class, 'about'])->name('about');
+        Route::get('/contacts', [SiteController::class, 'contacts'])->name('contacts');
+        Route::get('/guide', [SiteController::class, 'guide'])->name('guide');
+        
+        Route::get('/auction', [AuctionController::class, 'auction'])->name('auction');
+        // Route::group(['prefix' => 'auction'], function() {});
+        
+        Route::get('/properties', [PropertiesController::class, 'properties'])->name('properties');
+        Route::get('/properties/{properties:slug}', [PropertiesController::class, 'show']);
+        // Route::group(['prefix' => 'properties'], function() {});
+        
+        Route::get('/apartments', [ApartmentsController::class, 'apartments'])->name('apartments');
+        // Route::group(['prefix' => 'apartments'], function() {});
+        
+        Route::get('/user', [UserController::class, 'index']);
+        Route::get('/user/favorites', [UserController::class, 'favorites']);
+        // Route::group(['prefix' => 'user'], function() {});
+        
+        Route::get('/news', [NewsController::class, 'news'])->name('news');
+        // Route::group(['prefix' => 'news'], function() {});
+        // Route::get('/', [AuctionController::class, 'auction']);
+    }
+);
