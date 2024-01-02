@@ -30,6 +30,7 @@ return [
     'fill_out_form' => 'Fill out the form and we will send you an email for authorization',
     'auction_description' => 'The auction will save your time and provide you with the best offers from reliable developers. Fast, beneficial, and quality.',
     'name' => 'Name',
+    'call' => 'Call',
     'phone' => 'Your Phone',
     'mail' => 'Email',
     'type' => 'Type of Object',

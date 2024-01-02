@@ -7,7 +7,7 @@
         <form action="#" method="post" class="form">
             <div class="form-container">
                 <label class="form-label" for="name"><?= __('messages.name'); ?>:</label>
-                <input class="form-input" type="text" id="name" name="name" placeholder="<?= __('messages.name'); ?>Имя" required>
+                <input class="form-input" type="text" id="name" name="name" placeholder="<?= __('messages.name'); ?>" required>
             </div>
             <div class="form-container">
                 <label class="form-label" for="phone"><?= __('messages.phone'); ?>:</label>
