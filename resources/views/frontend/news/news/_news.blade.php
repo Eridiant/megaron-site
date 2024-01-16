@@ -1,6 +1,3 @@
-<section class="event container" style="max-width: 1204px; margin-left: auto; margin-right: auto">
-    <p class="title"><?= __('messages.event'); ?></p>
-    <div id="news">
         <div class="event-items" data-next-page="{{ $nextPageNum }}">
             <?php foreach ($news as $news): ?>
                 <div class="event-item">
@@ -44,5 +41,3 @@
                 <a href="{{ $nextPageUrl }}" id="event-more"><?= __('messages.see_more'); ?></a>
             </div>
         <?php endif; ?>
-    </div>
-</section>

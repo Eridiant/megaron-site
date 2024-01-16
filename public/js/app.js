@@ -24,7 +24,48 @@ document.addEventListener('DOMContentLoaded', () => {
             // Handle error
         });
     });
+
+    if (document.querySelector('#news')) {
+        document.querySelector('#event-more').addEventListener('click', (e) => {
+            e.preventDefault();
+            let nextPage = document.querySelector('#news .event-items').dataset.nextPage;
+            let nextPages = document.querySelector('#event-more').getAttribute('href');
+
+            loadNextPage(nextPage);
+        });
+    }
 })
+
+function loadNextPage(nextPage) {
+    // Получение значения атрибута data-next-page
+    // var nextPageNum = eventItemsContainer.dataset.nextPage;
+    // let nextPage =1;
+    // Формирование URL для запроса
+    let url = `/update?page=${nextPage}`;
+    let news = document.querySelector('#news');
+
+    news.classList.add('loading');
+
+    // Выполнение AJAX-запроса с использованием fetch
+    fetch(url, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'X-Requested-With': 'XMLHttpRequest',
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+        },
+        // Дополнительные настройки запроса, если необходимо
+    })
+    .then(response => response.json())
+    .then(data => {
+        news.innerHTML = data.html;
+        news.classList.remove('loading');
+    })
+    .catch(error => {
+        console.error('Ошибка запроса:', error);
+    });
+}
 
 function popup(content, currentClass) {
     let popup = document.querySelector('.popup');

@@ -21,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('/message', [MessageController::class, 'store'])->middleware('web');
+// Route::post('/news', [MessageController::class, 'news'])->middleware('web');

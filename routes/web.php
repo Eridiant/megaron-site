@@ -50,6 +50,8 @@ Route::group(
         // Route::group(['prefix' => 'user'], function() {});
         
         Route::get('/news', [NewsController::class, 'news'])->name('news');
+        Route::get('/update', [NewsController::class, 'update']);
+        Route::get('/news/{slug}', [NewsController::class, 'show']);
         // Route::group(['prefix' => 'news'], function() {});
         // Route::get('/', [AuctionController::class, 'auction']);
     }

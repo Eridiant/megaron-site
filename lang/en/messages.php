@@ -80,7 +80,7 @@ return [
     'brokers' => 'Brokers',
     'privacy_policy' => 'Privacy Policy',
     'log_in' => 'Log In',
-    'more' => 'Learn More',
+    'more' => 'More',
     'event' => 'Journal',
     'see_more' => 'See More',
     'thanks' => 'Thank You',

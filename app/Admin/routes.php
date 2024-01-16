@@ -21,5 +21,6 @@ Route::group([
     $router->resource('/apartments', ApartmentController::class);
     $router->resource('/languages', LanguageController::class);
     $router->resource('/estate-types', EstateTypeController::class);
+    $router->resource('/news', NewsController::class);
 
 });
