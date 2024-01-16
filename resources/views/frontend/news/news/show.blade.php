@@ -16,7 +16,7 @@
                 </picture>
             </div>
         <?php endforeach; ?>
-        <a href="{{ route('news') }}" class="news-back">Назад к новостям</a>
+        <a href="{{ route('news') }}" class="news-back more">{{ __('messages.back_to_news') }}</a>
     </div>
 </section>
 

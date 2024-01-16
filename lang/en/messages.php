@@ -66,6 +66,7 @@ return [
     'your_search' => 'What are you looking for',
     'all' => 'All',
     'load_more' => 'Load More',
+    'back_to_news' => 'Back',
     'suitable' => 'Most Suitable',
     'cheapest' => 'Cheapest',
     'expensive' => 'Most Expensive',
