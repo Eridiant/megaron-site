@@ -1,5 +1,5 @@
         <div class="event-items" data-next-page="{{ $nextPageNum }}">
-            <?php foreach ($news as $news): ?>
+            @foreach ($news as $news)
                 <div class="event-item">
                     <div class="event-image">
                         <img src="/uploads/{{$news->image ?? '/images/news/del/event/event.jpg'}}" alt="">
@@ -12,7 +12,7 @@
                             </div>
                             <a href="{{url('/news/' . $news->slug)}}" class="btn btn-white-black dt">
                                 <span>
-                                    <span><?= __('messages.more'); ?></span>
+                                    <span>{{ __('messages.more') }}</span>
                                     <svg width="20" height="20">
                                         <use xlink:href="/images/icons.svg#chat"></use>
                                     </svg>
@@ -23,9 +23,10 @@
                             {{$news->trexcerpt->value ?? $news->content->content}}
                         </div>
                         <div class="event-desc-mb">
+                            <a href="{{ route('news.show', ['slug' => $news->slug]) }}">
                             <a href="{{url('/news/' . $news->slug)}}" class="btn btn-black mb">
                                 <span>
-                                    <span><?= __('messages.more'); ?></span>
+                                    <span>{{ __('messages.more') }}</span>
                                     <svg width="20" height="20">
                                         <use xlink:href="/images/icons.svg#chat"></use>
                                     </svg>
@@ -34,10 +35,10 @@
                         </div>
                     </div>
                 </div>
-            <?php endforeach; ?>
+            @endforeach
         </div>
-        <?php if ($nextPageUrl): ?>
+        @if ($nextPageUrl)
             <div class="event-more more">
-                <a href="{{ $nextPageUrl }}" id="event-more"><?= __('messages.see_more'); ?></a>
+                <a href="{{ $nextPageUrl }}" id="event-more">{{ __('messages.see_more') }}</a>
             </div>
-        <?php endif; ?>
+        @endif
