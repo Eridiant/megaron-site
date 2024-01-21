@@ -52,15 +52,28 @@
                 <button type="submit"><svg width="20" height="20"><use xlink:href="/images/icons.svg#search"></use></svg></button>
             </form>
         </div>
-        <a href="{{url('/login')}}" class="login">
-            <div class="login-icon">
-                <svg width="24" height="24"><use xlink:href="/images/icons.svg#user"></use></svg>
+        @guest
+            <a href="{{url('/login')}}" class="login">
+                <div class="login-icon">
+                    <svg width="24" height="24"><use xlink:href="/images/icons.svg#user"></use></svg>
+                </div>
+                <div class="login-link">
+                    <span>{{ __('messages.enter') }}</span>
+                    <svg width="20" height="20"><use xlink:href="/images/icons.svg#enter"></use></svg>
+                </div>
+            </a>
+        @endguest
+        @auth
+            <div class="login">
+                <div class="login-icon">
+                    <a href="{{route('dashboard')}}"><svg width="24" height="24"><use xlink:href="/images/icons.svg#user"></use></svg></a>
+                </div>
+                <div class="login-link">
+                    <span><a href="{{route('dashboard')}}">{{ Auth::user()->name }}</a></span>
+                    <a href="{{url('/logout')}}"><svg width="20" height="20"><use xlink:href="/images/icons.svg#enter"></use></svg></a>{{-- {{ __('messages.exit') }} --}}
+                </div>
             </div>
-            <div class="login-link">
-                <span><?= __('messages.enter'); ?></span>
-                <svg width="20" height="20"><use xlink:href="/images/icons.svg#enter"></use></svg>
-            </div>
-        </a>
+        @endauth
     </div>
 </div>
 
