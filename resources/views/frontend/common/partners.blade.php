@@ -1,5 +1,5 @@
 <section class="partners container" style="max-width: 1204px; margin-left: auto; margin-right: auto">
-    <p class="title"><?= __('messages.xxxx'); ?>Партнеры</p>
+    <p class="title">{{ __('messages.partners') }}</p>
     <div class="partners-images">
         <div class="partners-image">
             <picture>

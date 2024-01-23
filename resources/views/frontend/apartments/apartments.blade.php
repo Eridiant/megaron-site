@@ -4,7 +4,7 @@
 @section('description', "\$category->description")
 
 @section('content')
-    @include('frontend.apartments._apartments')
+    @include('frontend.apartments.apartments.apartments')
 
     @include('frontend.common.experts')
     @include('frontend.common.partners')

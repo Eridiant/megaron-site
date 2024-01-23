@@ -59,6 +59,7 @@ Route::group(
         // Route::group(['prefix' => 'properties'], function() {});
         
         Route::get('/apartments', [ApartmentsController::class, 'apartments'])->name('apartments');
+        Route::get('/apartments/{id}', [ApartmentsController::class, 'show'])->name('apartments.show');
         // Route::group(['prefix' => 'apartments'], function() {});
         
         Route::get('/user', [UserController::class, 'index']);

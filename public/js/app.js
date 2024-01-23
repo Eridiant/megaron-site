@@ -25,16 +25,122 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    if (document.querySelector('.flats')) {
+        const form = document.querySelector('.form-estate');
+        // Добавляем слушатель события на отправку формы
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const estateValue = document.getElementById('estate').value;
+            const statusValue = document.getElementById('status').value;
+            const bedroomsValue = document.getElementById('bedrooms').value;
+            const priceValue = document.getElementById('price').value;
+            const priceToValue = document.getElementById('price_to').value;
+            const currencyValue = document.getElementById('currency').value;
+            const cityValue = document.getElementById('city').value;
+
+            let url = '/apartments?' +
+                'estate=' + encodeURIComponent(estateValue) +
+                '&status=' + encodeURIComponent(statusValue) +
+                '&bedrooms=' + encodeURIComponent(bedroomsValue) +
+                '&price=' + encodeURIComponent(priceValue) +
+                '&price_to=' + encodeURIComponent(priceToValue) +
+                '&currency=' + encodeURIComponent(currencyValue) +
+                '&city=' + encodeURIComponent(cityValue);
+
+            let flats = document.querySelector('.flats');
+
+            flats.classList.add('loading');
+
+            loadNextPages(url)
+                .then(html => {
+                    document.querySelector('.flats').innerHTML = html;
+                    // console.log('Полученный HTML:', html);
+                })
+                .catch(error => {
+                    console.error('Произошла ошибка:', error);
+                });
+
+            flats.classList.remove('loading');
+        });
+        document.querySelector('.flats').addEventListener('click', (e) => {
+            if (!e.target.closest('#flats-more')) {
+                return;
+            }
+            e.preventDefault();
+            let nextPage = document.querySelector('.flats .flats-wrapper').dataset.nextPage;
+
+            const estateValue = document.getElementById('estate').value;
+            const statusValue = document.getElementById('status').value;
+            const bedroomsValue = document.getElementById('bedrooms').value;
+            const priceValue = document.getElementById('price').value;
+            const priceToValue = document.getElementById('price_to').value;
+            const currencyValue = document.getElementById('currency').value;
+            const cityValue = document.getElementById('city').value;
+
+            // let nextPages = document.querySelector('#flats-more').getAttribute('href');
+
+            let url = '/apartments?page=' + nextPage +
+                '&estate=' + encodeURIComponent(estateValue) +
+                '&status=' + encodeURIComponent(statusValue) +
+                '&bedrooms=' + encodeURIComponent(bedroomsValue) +
+                '&price=' + encodeURIComponent(priceValue) +
+                '&price_to=' + encodeURIComponent(priceToValue) +
+                '&currency=' + encodeURIComponent(currencyValue) +
+                '&city=' + encodeURIComponent(cityValue);
+
+            let flats = document.querySelector('.flats');
+
+            flats.classList.add('loading');
+
+            loadNextPages(url)
+                .then(html => {
+                    document.querySelector('.flats').innerHTML = html;
+                    // console.log('Полученный HTML:', html);
+                })
+                .catch(error => {
+                    console.error('Произошла ошибка:', error);
+                });
+
+            flats.classList.remove('loading');
+        });
+    }
+
     if (document.querySelector('#news')) {
-        document.querySelector('#event-more').addEventListener('click', (e) => {
+
+        document.querySelector('.event').addEventListener('click', (e) => {
+            if (!e.target.closest('#event-more')) {
+                return;
+            }
             e.preventDefault();
             let nextPage = document.querySelector('#news .event-items').dataset.nextPage;
-            let nextPages = document.querySelector('#event-more').getAttribute('href');
+            // let nextPages = document.querySelector('#event-more').getAttribute('href');
 
             loadNextPage(nextPage);
         });
     }
 })
+
+function loadNextPages(url) {
+    return new Promise((resolve, reject) => {
+        fetch(url, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest',
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+            },
+        })
+        .then(response => response.json())
+        .then(data => {
+            resolve(data.html);
+        })
+        .catch(error => {
+            console.error('Ошибка запроса:', error);
+            reject(error);
+        });
+    });
+}
 
 function loadNextPage(nextPage) {
     // Получение значения атрибута data-next-page

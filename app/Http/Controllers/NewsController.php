@@ -50,7 +50,7 @@ class NewsController extends Controller
             'nextPageNum' => $news->currentPage() + 1
         ])->render();
         // dd(response()->json(['html' => $htmlContent], 201));
-        return response()->json(['html' => $htmlContent], 201);
+        return response()->json(['html' => $htmlContent]);
         // return response()->json(['success' => 1, 'render' => $htmlContent], 201);
     }
 

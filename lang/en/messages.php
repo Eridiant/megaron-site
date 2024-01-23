@@ -82,6 +82,7 @@ return [
     'privacy_policy' => 'Privacy Policy',
     'log_in' => 'Log In',
     'more' => 'More',
+    'partners' => 'Partners',
     'event' => 'Journal',
     'see_more' => 'See More',
     'thanks' => 'Thank You',
