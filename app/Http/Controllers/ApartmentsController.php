@@ -30,10 +30,10 @@ class ApartmentsController extends Controller
             $query->where('number_of_bedrooms', $bedrooms);
         }
 
-        if ($sity = $request->input('sity')) {
-            $query->where('complex.city.tentativeName', $sity);
-            // $query->where('complex.neighborhood.', $sity); // 
-        }
+        // if ($sity = $request->input('sity')) {
+        //     $query->where('complex.city.tentativeName', $sity);
+        //     // $query->where('complex.neighborhood.', $sity); // 
+        // }
 
         $apartments = $query->paginate($perPage);
 
