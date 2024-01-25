@@ -55,6 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 .then(html => {
                     document.querySelector('.flats').innerHTML = html;
                     // console.log('Полученный HTML:', html);
+                    console.log('url', url);
+                    window.history.pushState = url;
                 })
                 .catch(error => {
                     console.error('Произошла ошибка:', error);
