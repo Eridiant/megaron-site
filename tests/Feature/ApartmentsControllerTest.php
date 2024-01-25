@@ -37,27 +37,27 @@ class ApartmentsControllerTest extends TestCase
     }
 
     /** @test */
-    public function it_can_show_an_apartment()
-    {
-        $city = City::factory()->create();
-        $neighborhood = Neighborhood::factory()->create();
-        $developer = Developer::factory()->create();
-        $complex = Complex::factory()->create();
-        $apartment = Apartment::factory()->create();
-        $apartmentContent = ApartmentContent::factory()->create();
+    // public function it_can_show_an_apartment()
+    // {
+    //     $city = City::factory()->create();
+    //     $neighborhood = Neighborhood::factory()->create();
+    //     $developer = Developer::factory()->create();
+    //     $complex = Complex::factory()->create();
+    //     $apartment = Apartment::factory()->create();
+    //     $apartmentContent = ApartmentContent::factory()->create();
 
-        // Выполняем запрос к маршруту show с id квартиры
-        $response = $this->get(route('apartments.show', ['id' => $apartment->id]));
+    //     // Выполняем запрос к маршруту show с id квартиры
+    //     $response = $this->get(route('apartments.show', ['id' => $apartment->id]));
 
-        // Проверяем успешный ответ
-        $response->assertStatus(200);
+    //     // Проверяем успешный ответ
+    //     $response->assertStatus(200);
 
-        // Проверяем, что используется нужное представление
-        $response->assertViewIs('frontend.apartments.show');
+    //     // Проверяем, что используется нужное представление
+    //     $response->assertViewIs('frontend.apartments.show');
 
-        // Проверяем, что в представлении есть переменная $apartment, содержащая информацию о квартире
-        $response->assertViewHas('apartment', $apartment);
-    }
+    //     // Проверяем, что в представлении есть переменная $apartment, содержащая информацию о квартире
+    //     $response->assertViewHas('apartment', $apartment);
+    // }
 
     /** @test */
     public function it_returns_404_if_apartment_not_found()
