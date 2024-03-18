@@ -9,49 +9,28 @@ use App\Models\News;
 
 class NewsController extends Controller
 {
-    public function news(Request $request): View
+    public function news(Request $request): View | JsonResponse
     {
-
         $perPage = 5;
 
-        $news = News::with('trtitle')
-            ->with('trexcerpt')
-            ->where('status', '>', 0)
-            ->has('trtitle')
-            // ->whereNotNull('news.trtitle')
-            ->paginate($perPage);
+        $news = (new News())->fetchNews($perPage);
 
         $nextPageUrl = $news->nextPageUrl();
+
+        if ($request->ajax()) {
+            $htmlContent = view('frontend.news.news._news', [
+                'news' => $news,
+                'nextPageUrl' => $nextPageUrl,
+                'nextPageNum' => $news->currentPage() + 1
+            ])->render();
+            return response()->json(['html' => $htmlContent]);
+        }
 
         return view('frontend.news.news', [
             'news' => $news,
             'nextPageUrl' => $nextPageUrl,
             'nextPageNum' => $news->currentPage() + 1
         ]);
-    }
-
-    public function update(Request $request): JsonResponse
-    {
-        if (!$request->ajax()) return response()->json(['error' => 'еггог'], 201);
-
-        $perPage = 5;
-
-        $news = News::with('trtitle')
-            ->with('trexcerpt')
-            ->where('status', '>', 0)
-            ->has('trtitle')
-            ->paginate($perPage);
-
-        $nextPageUrl = $news->nextPageUrl();
-
-        $htmlContent = view('frontend.news.news._news', [
-            'news' => $news,
-            'nextPageUrl' => $nextPageUrl,
-            'nextPageNum' => $news->currentPage() + 1
-        ])->render();
-        // dd(response()->json(['html' => $htmlContent], 201));
-        return response()->json(['html' => $htmlContent]);
-        // return response()->json(['success' => 1, 'render' => $htmlContent], 201);
     }
 
     public function show($slug): View

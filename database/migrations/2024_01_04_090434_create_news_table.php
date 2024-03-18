@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('news', function (Blueprint $table) {
             $table->id();
-            $table->text('slug')->unique();
+            $table->string('slug')->unique();
             $table->json('image')->nullable();
             $table->tinyInteger('status')->default(0);
             $table->timestamps();

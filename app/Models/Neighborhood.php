@@ -7,7 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Neighborhood extends Model
 {
-    // Disable automatic timestamps
+
+    use HasFactory;
+
     public $timestamps = false;
 
     protected $casts = [
@@ -15,8 +17,6 @@ class Neighborhood extends Model
         'common_video' => 'json',
         'media' => 'json',
     ];
-
-    use HasFactory;
 
     /**
      * The table associated with the model.

@@ -149,7 +149,7 @@ function loadNextPage(nextPage) {
     // var nextPageNum = eventItemsContainer.dataset.nextPage;
     // let nextPage =1;
     // Формирование URL для запроса
-    let url = `/update?page=${nextPage}`;
+    let url = `/news?page=${nextPage}`;
     let news = document.querySelector('#news');
 
     news.classList.add('loading');

@@ -60,4 +60,14 @@ class News extends Model
             ->where('column_name', 'excerpt')
             ->where('locale', app()->getLocale());
     }
+
+
+    public function fetchNews($perPage = 5)
+    {
+        return $this->with('trtitle')
+                    ->with('trexcerpt')
+                    ->where('status', '>', 0)
+                    ->has('trtitle')
+                    ->paginate($perPage);
+    }
 }

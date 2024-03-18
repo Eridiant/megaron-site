@@ -3,12 +3,11 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Models\Country;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\City>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\EstateType>
  */
-class CityFactory extends Factory
+class EstateTypeFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,8 +17,8 @@ class CityFactory extends Factory
     public function definition(): array
     {
         return [
-            'slug' => $this->faker->slug,
-            'country_id' => Country::inRandomOrder()->first()->id,
+            // 'name' => fake()->word(),
+            'active' => 1,
         ];
     }
 }

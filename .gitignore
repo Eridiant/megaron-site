@@ -25,6 +25,11 @@ yarn-error.log
 composer.phar
 composer.lock
 
+# docker
+/_docker
+/local-data
+/tmp
+
 .htaccess
 del/
 del.*
