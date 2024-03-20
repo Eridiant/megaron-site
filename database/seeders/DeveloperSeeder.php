@@ -4,15 +4,15 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\EstateType;
+use App\Models\Developer;
 
-class EstateTypeSeeder extends Seeder
+class DeveloperSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        EstateType::factory()->create();
+        Developer::factory(4)->create();
     }
 }

@@ -3,11 +3,12 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\EstateType>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Country>
  */
-class EstateTypeFactory extends Factory
+class CountryFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -16,9 +17,10 @@ class EstateTypeFactory extends Factory
      */
     public function definition(): array
     {
+        $name = $this->faker->unique()->country;
         return [
-            'name' => $this->faker->randomElement(['flat','villa' ,'penthouse' ,'commercial']),
-            'active' => 1,
+            'name' => $name,
+            'slug' => Str::slug($name),
         ];
     }
 }

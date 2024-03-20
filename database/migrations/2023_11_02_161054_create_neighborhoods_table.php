@@ -20,7 +20,7 @@ return new class extends Migration
             $table->json('polygon')->nullable();
             $table->integer('offers')->nullable();
             $table->decimal('min_price', 15, 2)->nullable();
-            $table->json('image')->nullable();
+            $table->string('image')->nullable();
             $table->json('common_video')->nullable();
             $table->json('media')->nullable();
 

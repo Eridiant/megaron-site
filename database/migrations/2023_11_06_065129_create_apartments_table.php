@@ -23,7 +23,7 @@ return new class extends Migration
             $table->decimal('living_area', 10, 2)->nullable();
             $table->tinyInteger('property_type')->default(1);
             $table->string('type', 255);
-            $table->json('image')->nullable();
+            $table->string('image')->nullable();
             $table->json('common_video')->nullable();
             $table->json('media')->nullable();
             $table->tinyInteger('status')->default(0);

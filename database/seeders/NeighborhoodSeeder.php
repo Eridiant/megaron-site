@@ -4,15 +4,15 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\EstateType;
+use App\Models\Neighborhood;
 
-class EstateTypeSeeder extends Seeder
+class NeighborhoodSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        EstateType::factory()->create();
+        Neighborhood::factory(20)->create();
     }
 }

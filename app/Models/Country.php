@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Country extends Model
 {
+
+    use HasFactory;
+
     // Disable automatic timestamps
     public $timestamps = false;
 
@@ -15,8 +18,6 @@ class Country extends Model
         'common_video' => 'json',
         'media' => 'json',
     ];
-
-    use HasFactory;
 
     /**
      * The table associated with the model.

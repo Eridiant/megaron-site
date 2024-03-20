@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 use App\Models\Country;
 
 /**
@@ -18,8 +19,8 @@ class CityFactory extends Factory
     public function definition(): array
     {
         return [
-            'slug' => $this->faker->slug,
-            'country_id' => Country::inRandomOrder()->first()->id,
+            'slug' => Str::slug($this->faker->city),
+            'country_id' => Country::factory(),
         ];
     }
 }

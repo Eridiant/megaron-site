@@ -13,14 +13,6 @@ class CitySeeder extends Seeder
      */
     public function run(): void
     {
-        City::factory()
-            ->count(4)
-            ->sequence(
-                ['slug' => 'dubay'],
-                ['slug' => 'abu-dhabi'],
-                ['slug' => 'adzhman'],
-                ['slug' => 'sharjah'],
-            )
-            ->create();
+        City::factory()->create();
     }
 }

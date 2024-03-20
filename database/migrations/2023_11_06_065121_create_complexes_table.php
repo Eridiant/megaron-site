@@ -20,7 +20,7 @@ return new class extends Migration
             $table->foreignId('neighborhood_id')->nullable();
             $table->json('types');
             $table->json('number_of_rooms')->nullable();
-            $table->json('image')->nullable();
+            $table->string('image')->nullable();
             $table->json('common_video')->nullable();
             $table->json('media')->nullable();
             $table->decimal('min_price', 15, 2)->nullable();
