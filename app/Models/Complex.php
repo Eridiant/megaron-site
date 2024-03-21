@@ -82,6 +82,11 @@ class Complex extends Model
         return $this->hasOne(ComplexContent::class)->where('lang', app()->getLocale());
     }
 
+    public function complexContent()
+    {
+        return $this->hasOne(ComplexContent::class);
+    }
+
     public function city()
     {
         return $this->belongsTo(City::class);

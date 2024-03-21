@@ -18,6 +18,7 @@ return [
     'bedroom' => 'Спален',
     'bathroom' => 'Ванн',
     'see' => 'Посмотреть',
+    'not' => 'нет',
     'reliable_projects' => 'Надежные проекты',
     'country' => 'Страна',
     'completion' => 'Сдача объекта',

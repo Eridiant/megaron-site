@@ -23,6 +23,20 @@ services:
       - db
     container_name: megaron_app
 
+  # db:
+  #   image: postgres:16.2
+  #   restart: always
+  #   volumes:
+  #     - ./tmp/db:/var/lib/postgresql/data
+  #   environment:
+  #     POSTGRES_USER: root
+  #     POSTGRES_PASSWORD: root
+  #     POSTGRES_DB: megaron
+  #     POSTGRES_INITDB_ARGS: "--encoding=UTF8 --locale=en_US.UTF-8"
+  #   ports:
+  #     - 8888:5432
+  #   container_name: megaron_postgres
+
   db:
     image: mysql:8.3.0
     restart: always

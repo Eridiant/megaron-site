@@ -20,7 +20,7 @@
                     <div class="swiper-slide destination" data-type="flats">
                         <div class="card-image">
                             <picture>
-                                <img src="/uploads/{{$complex->media[0] ?? 'complex/default.jpg'}}" alt="">
+                                <img src="/uploads/{{$complex->image ?? 'complex/default.jpg'}}" alt="">
                             </picture>
                         </div>
                         <a href="#" class="card-active border border-white target"><?= __('messages.see'); ?>&#8195;<svg width="16" height="16"><use xlink:href="/images/icons.svg#arrow"></use></svg></a>
@@ -31,7 +31,7 @@
                             <footer>
                                 <p><span><?= __('messages.country'); ?>:</span> <span>United Arab Emirates</span></p>
                                 <p><span><?= __('messages.completion'); ?>:</span> <span>{{$complex->delivery_date->format('Y')}}</span></p>
-                                    <?php foreach ($complex->types as $type): ?>
+                                    <?php foreach (json_decode($complex->types) as $type): ?>
                                         {{$types[$type] ?? ''}}
                                     <?php endforeach; ?>
                                 </span></p>

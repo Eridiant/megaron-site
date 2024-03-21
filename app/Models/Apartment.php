@@ -82,4 +82,9 @@ class Apartment extends Model
     {
         return $this->hasOne(ApartmentContent::class)->where('lang', app()->getLocale());
     }
+
+    public function apartmentContent()
+    {
+        return $this->hasOne(ApartmentContent::class);
+    }
 }

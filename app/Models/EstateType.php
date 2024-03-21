@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class EstateType extends Model
 {
+    use HasFactory;
+
     // Disable automatic timestamps
     public $timestamps = false;
-
-    use HasFactory;
 
     /**
      * The table associated with the model.

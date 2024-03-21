@@ -25,6 +25,8 @@ class ComplexFactory extends Factory
             'developer_id' => Developer::factory(),
             'neighborhood_id' => Neighborhood::factory(),
             'image' => "complex/default-{$this->faker->numberBetween(1, 15)}.jpg",
+            'status' => 9,
+            'delivery_date' => $this->faker->dateTimeBetween('-1 year', '+1 year'),
             'types' => $this->generateRandomArray(),
         ];
     }

@@ -17,9 +17,9 @@ class TranslationFactory extends Factory
     public function definition(): array
     {
         return [
-            'translatable_type' => fake()->word(),
-            'translatable_id' => '1',
-            'column_name' => 'name',
+            // 'translatable_type' => fake()->word(),
+            // 'translatable_id' => '1',
+            // 'column_name' => fake()->,
             'locale' => 'en',
             'value' => fake()->word(),
         ];

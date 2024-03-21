@@ -84,4 +84,9 @@ class Neighborhood extends Model
             ->where('column_name', 'description')
             ->where('locale', app()->getLocale());
     }
+
+    public function translation()
+    {
+        return $this->morphOne(Translation::class, 'translatable');
+    }
 }

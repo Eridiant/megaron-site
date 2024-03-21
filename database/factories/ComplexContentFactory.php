@@ -3,12 +3,11 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Models\ApartmentContent;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\ApartmentContent>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\ComplexContent>
  */
-class ApartmentContentFactory extends Factory
+class ComplexContentFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,10 +17,9 @@ class ApartmentContentFactory extends Factory
     public function definition(): array
     {
         return [
-            'apartment_id' => '1',
             'lang' => 'en',
-            'name' => $this->faker->name,
-            'description' => $this->faker->text,
+            'name' => fake()->words(2, true),
+            'description' => fake()->paragraph(),
         ];
     }
 }

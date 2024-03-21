@@ -14,13 +14,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->call(LanguageSeeder::class);
-        $this->call(EstateTypeSeeder::class);
-        $this->call(CitySeeder::class);
-        $this->call(NeighborhoodSeeder::class);
-        $this->call(DeveloperSeeder::class);
-        $this->call(ComplexSeeder::class);
-        $this->call(ApartmentSeeder::class);
+        $this->call([
+            LanguageSeeder::class,
+            EstateTypeSeeder::class,
+            CitySeeder::class,
+            NeighborhoodSeeder::class,
+            DeveloperSeeder::class,
+            ComplexSeeder::class,
+            ApartmentSeeder::class,
+        ]);
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([

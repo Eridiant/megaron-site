@@ -34,7 +34,7 @@ class ApartmentFactory extends Factory
             'image' => "apartment/default-{$this->faker->numberBetween(1, 16)}.jpg",
             // 'common_video' => ['path/to/video.mp4'],
             // 'media' => ['path/to/image1.jpg', 'path/to/image2.jpg'],
-            'status' => $this->faker->numberBetween(1, 9),
+            'status' => 9,
             'rank' => $this->faker->randomFloat(1, 1, 9.9),
         ];
     }

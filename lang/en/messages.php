@@ -18,6 +18,7 @@ return [
     'bedroom' => 'Bedrooms',
     'bathroom' => 'Baths',
     'see' => 'View',
+    'not' => 'hasn\'t',
     'reliable_projects' => 'Reliable Projects',
     'country' => 'Country',
     'completion' => 'Completion of the Object',
